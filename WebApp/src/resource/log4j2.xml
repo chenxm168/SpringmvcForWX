@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd"> -->
+
+<!-- <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" 
+	status ="FATAL"> -->
+<Configuration status="off">
+	<Properties>
+		<Property name="pattern">[%d{yy/MM/dd HH:mm:ss.SS}][%3t][%4p] : %m%n
+		</Property>
+		<!-- <Property name="logDir">/data/logs/dust-server</Property> -->
+		<Property name="logDir">d:/WebApp</Property>
+	</Properties>
+
+
+	<Appenders>
+
+		<Console name="console">
+			<PatternLayout pattern="[%d{yy/MM/dd HH:mm:ss.SS}][%3t][%4p] : %m%n"
+				charset="GB18030" />
+		</Console>
+		<!-- <RollingFile name="rollingFile" fileName="${WebApp.root}/logs/syslog.log" 
+			filePattern="${WebApp.root}/logs/%d{yyyy-MM-dd}/syslog.log"> -->
+
+		<RollingFile name="rollingFile" fileName="${logDir}/logs/syslog.log"
+			filePattern="${logDir}/logs/%d{yyyy-MM-dd}/syslog.log">
+			<PatternLayout pattern="${pattern}" charset="UTF-8" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" />
+			</Policies>
+			<!-- 日志保留策略，配置只保留七天 -->
+			<DefaultRolloverStrategy>
+				<!-- <Delete basePath="${WebApp.root}" maxDepth="1"> -->
+				<Delete basePath="${logDir}" maxDepth="1">
+					<IfFileName glob="syslog.log" />
+					<IfLastModified age="7d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+
+		</RollingFile>
+
+		<!-- <RollingFile name="xmrollingFile" fileName="${WebApp.root}/logs/syslog.log" 
+			filePattern="${WebApp.root}/logs/%d{yyyy-MM-dd}/applog.log"> -->
+
+		<RollingFile name="xmrollingFile" fileName="${logDir}/logs/applog.log"
+			filePattern="${logDir}/logs/%d{yyyy-MM-dd}/applog.log">
+
+			<PatternLayout pattern="${pattern}" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" />
+			</Policies>
+			<!-- 日志保留策略，配置只保留七天 -->
+			<DefaultRolloverStrategy>
+				<!-- <Delete basePath="${WebApp.root}" maxDepth="2"> -->
+				<Delete basePath="${pattern}" maxDepth="2">
+					<IfFileName glob="applog.log" />
+					<IfLastModified age="7d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+
+
+
+
+		</RollingFile>
+
+		<RollingFile name="tracerollingFile" fileName="${logDir}/logs/tracelog.log"
+			filePattern="${logDir}/logs/%d{yyyy-MM-dd}/tracelog.log">
+
+			<PatternLayout pattern="${pattern}" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" />
+			</Policies>
+			<!-- 日志保留策略，配置只保留七天 -->
+			<DefaultRolloverStrategy>
+				<!-- <Delete basePath="${WebApp.root}" maxDepth="2"> -->
+				<Delete basePath="${pattern}" maxDepth="2">
+					<IfFileName glob="trace.log" />
+					<IfLastModified age="7d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+
+
+
+
+		</RollingFile>
+        <!--  
+		<Async name="AsyncRollingFile">
+			<AppenderRef ref="rollingFile" />
+		</Async>
+        -->
+		<Async name="AsyncTraceRollingFile">
+			<AppenderRef ref="tracerollingFile" />
+		</Async>
+		
+				<Async name="AsyncXmRollingFile">
+			<AppenderRef ref="xmrollingFile" />
+		</Async>
+
+		<!-- <Appender type="Console" name="console"> <Layout type="PatternLayout" 
+			pattern="[%d{yy/MM/dd HH:mm:ss.SS}][%3t][%4p] : %m%n" /> </Appender > <Appender 
+			type="RollingFile" name="rollingfile"> <layout type="PatternLayout" pattern="[%d{yy/MM/dd 
+			HH:mm:ss.SS}][%3t][%4p] : %m%n" /> </Appender > -->
+
+	</Appenders>
+
+
+	<!-- <appender name="console" class="org.apache.log4j.ConsoleAppender"> 
+		<layout class="org.apache.log4j.PatternLayout"> <param name="ConversionPattern" 
+		value="[%d{yy/MM/dd HH:mm:ss.SS}][%3t][%4p] : %m%n" /> </layout> </appender> 
+		<appender name="rollingFile" class="org.apache.log4j.DailyRollingFileAppender"> 
+		<param name="File" value="${WebApp.root}/logs/syslog.log" /> <param name="DatePattern" 
+		value="'.'yyyy-MM-dd'.log'" /> <layout class="org.apache.log4j.PatternLayout"> 
+		<param name="ConversionPattern" value="[%d{yy/MM/dd HH:mm:ss.SS}][%3t][%4p] 
+		: %m%n" /> </layout> </appender> <appender name="xmrollingFile" class="org.apache.log4j.DailyRollingFileAppender"> 
+		<param name="File" value="${WebApp.root}/logs/applog.log" /> <param name="DatePattern" 
+		value="'.'yyyy-MM-dd'.log'" /> <layout class="org.apache.log4j.PatternLayout"> 
+		<param name="ConversionPattern" value="[%d{yy/MM/dd HH:mm:ss.SS}][%3t][%4p] 
+		: %m%n" /> </layout> </appender> -->
+	<Loggers>
+
+
+
+
+
+
+		<Logger name="xm.controller" additivity="true" level="TRACE">
+
+			<AppenderRef ref="console" />
+			<AppenderRef ref="AsyncTraceRollingFile" />
+
+		</Logger>
+
+		<Logger name="xm.message" additivity="false" level="TRACE">
+
+			<AppenderRef ref="console" />
+			<AppenderRef ref="AsyncTraceRollingFile" />
+		</Logger>
+		
+				<Logger name="xm.controller" additivity="false" level="INFO">
+
+			<!-- <AppenderRef ref="console" /> -->
+			<AppenderRef ref="AsyncXmRollingFile" />
+		</Logger>
+
+		<Logger name="xm.message" additivity="false" level="INFO">
+
+			<!-- <AppenderRef ref="console" /> -->
+			<AppenderRef ref="AsyncXmRollingFile" />
+		</Logger>
+
+
+		<Logger name="xm.Tib" additivity="false" level="TRACE">
+
+			 <AppenderRef ref="console" /> 
+
+			<AppenderRef ref="AsyncXmRollingFile" />
+		</Logger>
+
+
+		<Root level="TRACE">
+
+
+			<AppenderRef ref="console" />
+
+			<AppenderRef ref="rollingFile" />
+		</Root>
+	</Loggers>
+</Configuration>
+<!-- </log4j:configuration> -->

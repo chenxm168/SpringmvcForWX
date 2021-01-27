@@ -1,0 +1,257 @@
+package xm.message.wx;
+
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.poi.util.Units;
+import org.dom4j.Document;
+import org.dom4j.DocumentHelper;
+import org.dom4j.Element;
+import org.dom4j.ElementHandler;
+import org.dom4j.Node;
+import org.dom4j.io.SAXReader;
+import org.springframework.core.io.ClassPathResource;
+
+public class QueryPlanTaskList extends AbsWXMsgSrv {
+
+	@Override
+	public String Process(String jsonMessage) {
+		log.info("Received WX Message <--");
+		log.info(jsonMessage+"\n");
+		
+		SimpleDateFormat formatter = new SimpleDateFormat(
+				"yyyy-MM-dd");
+		Date date = new Date(System.currentTimeMillis());
+		String dateString=formatter.format(date)+" 23:59:59";
+		if(util==null)
+		{
+			try {
+				 util=(MsgBaseUtil) context.getBean("msgbaseutil");
+				
+			} catch (Exception e) {
+				log.error(e.getMessage(),e);
+			}
+		}
+
+		
+		if(util==null)
+		{
+			return StringUtils.EMPTY;
+		}
+		
+		String jxml = util.Json2Xml(jsonMessage);
+		String env = util.getWXEnv(jxml);
+		String userid = util.getWXUserId(jxml);
+		Map<String, String> map = util.getWXParamMap(jxml);
+		String cnd=StringUtils.EMPTY;
+		StringBuilder sb= new StringBuilder();
+		if(map.containsKey("MACHINEGROUPNAME"))
+		{
+			sb.append(" AND M.MACHINEGROUPNAME ='"+map.get("MACHINEGROUPNAME")+"' ");
+		}
+		
+		if(map.containsKey("MACHINENAME"))
+		{
+			sb.append(" AND M.MACHINENAME ='"+map.get("MACHINENAME")+"' ");
+		}
+		
+		if(map.containsKey("UNITNAME"))
+		{
+			sb.append(" AND M.UNITNAME ='"+map.get("UNITNAME")+"' ");
+		}
+		
+		//sb.append(" AND M.CLEANMAINTPLANDATE < TO_DATE( '"+dateString+"', 'YYYY-MM-DD HH24:MI:SS') ");
+		//CLEANMAINTPLANDATE
+		
+		if(map.containsKey("ITEMTYPE"))
+		{
+			sb.append(" AND M.ITEMTYPE ='"+map.get("ITEMTYPE")+"' ");
+		}
+		
+		if(map.containsKey("CLEANMAINTSTATUS"))
+		{
+			sb.append(" AND M.CLEANMAINTSTATUS ='"+map.get("CLEANMAINTSTATUS")+"' ORDER BY M.CLEANMAINTPLANDATE");
+		}else {
+			sb.append("AND M.CLEANMAINTSTATUS NOT IN('Completed') ORDER BY M.CLEANMAINTPLANDATE ");
+		}
+		
+		cnd=sb.toString();
+		
+		Map<String, String> map2= new HashMap<String, String>();
+		map2.put("EVENTUSER", userid);
+		map2.put("CONDITION", cnd);
+		
+	   String	qString= util.MakeQueryMessage("GetCleanMaintenanceList", map2);
+	   String rString = tib.QueryRequest(env, qString);
+	   Document rtndoc =this.attachWxSetting(rString);
+	   
+	   Map<String, String> funmap=new HashMap<String, String>();
+	   funmap.put("STATECODE", map.get("CLEANMAINTSTATUS"));
+	   funmap.put("DEPT", map.get("DEPT"));
+	   funmap.put("USERID", map.get("EVENTUSER"));
+	   String qString2 = util.MakeQueryMessage("GetUserGradeFunction", funmap);
+	   String rString2 =tib.QueryRequest(env, qString2);
+	   if(rString2!=StringUtils.EMPTY)
+	   {
+		   util.AttachTableData(rtndoc, rString2, "usergrade");
+	   }
+	   
+	   String rtnString =rtndoc.asXML();
+	   log.info(rtnString);
+	   
+		return util.Xml2Json(rtnString);
+	}
+	
+	private String MakeWxReply(String xml)
+	{
+		try {
+			
+			ClassPathResource classPathResource = new ClassPathResource("wxsetting.xml");
+			File file = classPathResource.getFile();
+			SAXReader saxReader = new SAXReader();
+			Document document = saxReader.read(file);
+			Element setroot=document.getRootElement();
+			Element setpage= (Element) setroot.selectSingleNode("//pages/page[@name='plantask']");
+			Element settbEL=(Element) setpage.selectSingleNode(".//table[@name='tasklist']");
+	        if(settbEL==null)
+	        {
+	        	return xml;
+	        }
+			Document rtndoc= util.MakeBaseReturnMessageDoc();
+			Element rtnroot = rtndoc.getRootElement();
+			Element rtnbody= (Element) rtnroot.selectSingleNode("//Body | //body | //BODY");
+			//Element rtntb= rtnbody.addElement("table");
+			 rtnbody.add((Element)setpage.clone());
+			List<Element> settbchildlist =settbEL.elements();
+			//for (Element child : settbchildlist) {
+				
+			//		rtntb.add((Element)child.clone());
+				
+			//}
+			
+			//Element rtntbrows= rtntb.addElement("rows");
+			
+			log.info(rtndoc.asXML()); 
+			
+			Map<String, Map<String, String>> hdmap=new HashMap<String, Map<String,String>>();
+			
+			//Map<String, String> colmap=new HashMap<String, String>();
+			
+			List<Element> setheaders= ((Element) settbEL.selectSingleNode("..//headers")).elements();
+			
+			for (Element element : setheaders) {
+				
+				Map<String, String> map=new HashMap<String, String>();
+				
+				Element idx= (Element) element.selectSingleNode(".//index | .//Index | .//INDEX");
+				//Element vn= (Element) element.selectSingleNode(".//valuename | .//ValueName | .//VALUENAME");
+				if(idx!=null)
+				{
+					String idxString = idx.getText();
+					//String vnsString = vn.getText();
+					List<Element> childElements = element.elements();
+					for (Element element2 : childElements) {
+						map.put(element2.getName(), element2.getText());
+						
+					}
+					
+					hdmap.put(idxString, map);
+				}
+				
+				
+			} //end for
+			
+			
+			Document mesdoc = DocumentHelper.parseText(xml);
+			Element mesroot = mesdoc.getRootElement();
+			Element mesDataList= (Element) mesroot.selectSingleNode("//DATALIST | //Datalist | //datalist");
+			if(mesDataList==null)
+			{
+				return xml;
+			}
+			
+			
+			
+			
+			List<Element> mesdatas= mesDataList.elements();
+			if(mesdatas.size()<1)
+			{
+				return xml;
+			}
+			
+			Element rtnDataList= rtnbody.addElement("DATALIST");
+			
+			for (Element element : mesdatas) {
+				
+				Element dataElement= rtnDataList.addElement("DATA");
+				
+				for(int i=0;i<hdmap.size();i++)
+				{
+					//String name= colmap.get(i);
+					
+					Map<String, String> map = hdmap.get(String.valueOf(i));
+					
+					String vname= map.get("valuename");
+				    
+					if(vname.length()>0)
+					{
+						Element el=(Element) element.selectSingleNode(".//"+vname);
+						if(el==null)
+						{
+							Element element2=	dataElement.addElement(map.get("id"));
+							  element2.setText(map.get("defaulevalue"));
+							
+						}else {
+							//dataElement.addElement(vname,el.getText());
+							 Element element2=	dataElement.addElement(vname);
+							  element2.setText(el.getText());
+						}
+					}else {
+						Element element2=	dataElement.addElement(map.get("id"));
+						  element2.setText(map.get("defaulevalue"));
+					}
+					
+					
+					
+				}
+				
+				
+			}
+             
+           return rtndoc.asXML();
+	        
+	        
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			
+			log.error(e.getMessage(),e);
+		}
+		
+		return StringUtils.EMPTY;
+
+	}
+	
+	private Document  attachWxSetting(String xml) {
+		
+		Document rtndoc = util.AttachWxPageSet(xml,"plantask");
+		
+		if(rtndoc==null)
+		{
+			return null;
+		}
+		
+		rtndoc = util.AttachTableData(rtndoc, xml, "tasklist");
+		
+		return rtndoc;
+		
+		
+		
+	}
+
+}

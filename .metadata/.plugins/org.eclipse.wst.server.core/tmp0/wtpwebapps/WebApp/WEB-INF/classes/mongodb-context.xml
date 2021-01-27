@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context.xsd
+          http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+          http://www.springframework.org/schema/data/jpa
+          http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+          http://www.springframework.org/schema/data/jpa
+          http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+ <!--  no use disable
+	<mongo:mongo-client id="mongo" host="localhost"
+		port="27017">
+		<mongo:client-options connections-per-host="8"
+			threads-allowed-to-block-for-connection-multiplier="4"
+			connect-timeout="1000" max-wait-time="1500" socket-keep-alive="true"
+			socket-timeout="1500" />
+	</mongo:mongo-client>
+	
+	-->
+	
+	<!-- <beans:beans xmlns="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns:beans="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context" 
+		xmlns:mongo="http://www.springframework.org/schema/data/mongo" xsi:schemaLocation="http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/data/mongo 
+		http://www.springframework.org/schema/data/mongo/spring-mongo.xsd http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd"> -->
+
+
+
+
+
+	<!-- <context:property-placeholder location="mongodb.properties" /> -->
+
+	<!-- <mongo:mongo-client id="mongo" replica-set="${mongo.replicaSet}"> <mongo:client-options 
+		connections-per-host="${mongo.connectionsPerHost}" threads-allowed-to-block-for-connection-multiplier="${mongo.threadsAllowedToBlockForConnectionMultiplier}" 
+		connect-timeout="${mongo.connectTimeout}" max-wait-time="${mongo.maxWaitTime}" 
+		socket-keep-alive="${mongo.socketKeepAlive}" socket-timeout="${mongo.socketTimeout}"/> 
+		</mongo:mongo-client> -->
+
+    <!-- no use disable 
+	<mongo:mapping-converter id="mongoConverter"
+		base-package="xm.wx">
+		<mongo:custom-converters base-package="xm.wx" />
+	</mongo:mapping-converter>
+
+
+	<mongo:db-factory id="mongoDbFactory" dbname="wxdb"
+		mongo-ref="mongo" />
+
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+		<constructor-arg ref="mongoConverter" />
+		<property name="writeConcern" value="SAFE" />
+	</bean>
+
+	<mongo:repositories base-package="xm.wx"></mongo:repositories>
+-->
+	<!-- require spring data mongodb 2.1 or upon -->
+	
+	<!-- no use disable 
+	<bean id="mongoTransactionManager"
+		class="org.springframework.data.mongodb.MongoTransactionManager">
+		<constructor-arg name="dbFactory" ref="mongoDbFactory" />
+	</bean>
+   -->
+   <!--  
+	<tx:annotation-driven transaction-manager="mongoTransactionManager"
+		proxy-target-class="true" />
+   -->
+     <!--   <jpa:repositories base-package="xm.wx"/>  -->
+     
+     
+
+</beans>

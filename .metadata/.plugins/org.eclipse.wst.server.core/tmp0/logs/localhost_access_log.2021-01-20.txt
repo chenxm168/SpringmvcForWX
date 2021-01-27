@@ -1,0 +1,8 @@
+127.0.0.1 - - [20/Jan/2021:17:06:12 +0800] "GET / HTTP/1.1" 200 210
+127.0.0.1 - - [20/Jan/2021:17:06:18 +0800] "GET /WEB-INF/classes/xm/controller/FileUploadController.java HTTP/1.1" 404 949
+127.0.0.1 - - [20/Jan/2021:17:27:12 +0800] "GET / HTTP/1.1" 200 210
+127.0.0.1 - - [20/Jan/2021:17:27:13 +0800] "GET /WEB-INF/classes/xm/controller/FileUploadController.java HTTP/1.1" 404 949
+172.28.64.40 - - [20/Jan/2021:17:28:47 +0800] "POST /fileupload HTTP/1.1" 404 971
+172.28.64.25 - - [20/Jan/2021:17:30:09 +0800] "POST /fileupload HTTP/1.1" 404 971
+172.28.64.40 - - [20/Jan/2021:17:31:40 +0800] "POST /fileupload HTTP/1.1" 404 971
+172.28.64.40 - - [20/Jan/2021:17:37:31 +0800] "POST /fileupload:80 HTTP/1.1" 404 977

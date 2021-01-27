@@ -1,0 +1,12 @@
+1607305370500	Rename local variable 'jsonArray'
+1607416055250	Delete element
+1607477267342	Rename resource 'tibmsg.xml'
+1607482879677	Rename resource 'log4j2.xml'
+1607483104922	Rename resource 'log4j2.xml'
+1607483118264	Rename resource 'log4j2_back.xml'
+1607508090327	Rename type 'UserLoginService'
+1607559718502	Rename type 'UserLoginSrv'
+1607559816504	Rename type 'AsdUserLoginSrv'
+1607564107061	Rename type 'WXMessageService'
+1607564771661	Rename type 'AsdUserLoginSvr'
+1607565829260	Rename type 'WXMessageSvr'

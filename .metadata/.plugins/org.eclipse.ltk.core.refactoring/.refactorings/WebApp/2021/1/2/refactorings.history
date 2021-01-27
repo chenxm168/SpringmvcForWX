@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;xm.message.wx.MsgBaseUitl&apos; to &apos;MsgBaseUtil&apos;&#x0D;&#x0A;- Original project: &apos;WebApp&apos;&#x0D;&#x0A;- Original element: &apos;xm.message.wx.MsgBaseUitl&apos;&#x0D;&#x0A;- Renamed element: &apos;xm.message.wx.MsgBaseUtil&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MsgBaseUitl&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;xm.message.wx{MsgBaseUitl.java[MsgBaseUitl" matchStrategy="1" name="MsgBaseUtil" qualified="false" references="true" similarDeclarations="false" stamp="1610164025189" textual="false" version="1.0"/>
+</session>

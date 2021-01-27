@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename method &apos;xm.message.MsgUtils.MakeJsonMsgForMesReplyMsg(...)&apos; to &apos;makeJsonMsgForQueryReplyMsg&apos;&#x0D;&#x0A;- Original project: &apos;WebApp&apos;&#x0D;&#x0A;- Original element: &apos;xm.message.MsgUtils.MakeJsonMsgForMesReplyMsg(...)&apos;&#x0D;&#x0A;- Renamed element: &apos;xm.message.MsgUtils.makeJsonMsgForQueryReplyMsg(...)&apos;&#x0D;&#x0A;- Update references to refactored element" delegate="false" deprecate="false" description="Rename method &apos;MakeJsonMsgForMesReplyMsg&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.method" input="/src\/main\/java&lt;xm.message{MsgUtils.java[MsgUtils~MakeJsonMsgForMesReplyMsg~QString;" name="makeJsonMsgForQueryReplyMsg" references="true" stamp="1608346295207" version="1.0"/>
+</session>

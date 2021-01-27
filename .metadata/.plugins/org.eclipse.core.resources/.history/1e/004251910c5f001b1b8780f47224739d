@@ -1,0 +1,31 @@
+package xm.scheduler;
+
+import org.apache.logging.log4j.*;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+
+
+	
+	
+	public class ScheduleJob1 implements IScheduleJob ,ApplicationContextAware{
+		private ApplicationContext context;
+		
+		public void  doSchedule() {
+			
+			//WebApplicationContext context = ContextLoader.getCurrentWebApplicationContext();
+			
+			Logger logger = LogManager.getLogger(ScheduleJob1.class);
+			logger.debug("Start Schedule");
+			
+		}
+
+		@Override
+		public void setApplicationContext(ApplicationContext context)
+				throws BeansException {
+			this.context=context;
+			
+		}
+
+}

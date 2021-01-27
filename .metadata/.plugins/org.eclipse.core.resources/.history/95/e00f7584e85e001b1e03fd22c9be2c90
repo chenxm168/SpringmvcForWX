@@ -1,0 +1,430 @@
+package xm.Tib;
+
+import java.io.File;
+
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+import javax.xml.crypto.NodeSetData;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.dom4j.Document;
+import org.dom4j.Element;
+import org.dom4j.Node;
+import org.dom4j.io.SAXReader;
+
+//import org.springframework.core.io.ClassPathResource;
+
+public class TibUtils {
+
+	private static Logger logger = LogManager.getLogger(TibUtils.class);
+	@SuppressWarnings("rawtypes")
+	private static ConcurrentHashMap map = new ConcurrentHashMap();
+
+	@SuppressWarnings("unchecked")
+	public static String getDaemon(String envString, String module) {
+		String keyString = envString + module + "daemon0";
+
+		Object s = map.get(keyString);
+		if (s == null) {
+
+			Node[] nodes = getDaemons(envString, module);
+			if (nodes.length > 0) {
+
+				for (int i = 0; i < nodes.length; i++) {
+					try {
+						Element element = (Element) nodes[i];
+						if (element != null) {
+							String daemonString = element.getText().trim();
+							if (daemonString.length() < 1) {
+								continue;
+							}
+							String daemonKeyString = envString + module
+									+ "daemon" + String.valueOf(i);
+							if (map.contains(daemonKeyString)) {
+								map.remove(daemonKeyString);
+							}
+							map.put(daemonKeyString, daemonString);
+						}
+
+					} catch (Exception e) {
+						logger.error(e.getMessage(), e);
+					}
+				}
+
+				/*
+				 * String daemonString = ((Element) nodes[0]).getText();
+				 * logger.debug(String.format("getDaemon Success![daemon:%s]",
+				 * daemonString)); map.put(keyString, daemonString);
+				 */
+				return (String) map.get(envString + module + "daemon0");
+			}
+
+		} else {
+			return (String) s;
+		}
+
+		logger.error("Can't get daemon setting:[" + envString + ";" + module
+				+ "]");
+		return StringUtils.EMPTY;
+
+	}
+
+	@SuppressWarnings("unchecked")
+	public static String getDaemon(String envString, String module, int seq) {
+		if (seq == 0) {
+			return getDaemon(envString, module);
+		} else {
+
+			String keyString = envString + module + "daemon"
+					+ String.valueOf(seq);
+
+			Object s = map.get(keyString);
+			if (s != null) {
+				return (String) s;
+			} else {
+
+				Node[] nodes = getDaemons(envString, module);
+				if (nodes.length > 0) {
+
+					for (int i = 0; i < nodes.length; i++) {
+						try {
+							Element element = (Element) nodes[i];
+							if (element != null) {
+								String daemonString = element.getText().trim();
+								if (daemonString.length() < 1) {
+									continue;
+								}
+								String daemonKeyString = envString + module
+										+ "daemon" + String.valueOf(i);
+								if (map.contains(daemonKeyString)) {
+									map.remove(daemonKeyString);
+								}
+								map.put(daemonKeyString, daemonString);
+							}
+
+						} catch (Exception e) {
+							logger.error(e.getMessage(), e);
+						}
+					}
+
+					/*
+					 * String daemonString = ((Element) nodes[0]).getText();
+					 * logger
+					 * .debug(String.format("getDaemon Success![daemon:%s]",
+					 * daemonString)); map.put(keyString, daemonString);
+					 */
+					if(seq<map.size())
+					{
+						return (String) map.get(envString + module + "daemon"
+								+ String.valueOf(seq));
+					}else {
+						return StringUtils.EMPTY;
+					}
+					
+
+				}
+
+			}
+
+		}
+		return StringUtils.EMPTY;
+	}
+	
+	
+	public static int getDaemonCount(String envString, String module) {
+	
+		return map.size();
+	}
+	
+
+	public static String getNetwork(String envString, String module) {
+		return getElementText(envString, module, "network");
+
+	}
+
+	public static String getService(String envString, String module) {
+		return getElementText(envString, module, "service");
+
+	}
+
+	public static String getSourceSubject(String envString, String module) {
+		return getElementText(envString, module, "sourceSubject");
+
+	}
+
+	public static String getTargetSubject(String envString, String module) {
+		return getElementText(envString, module, "targetSubject");
+
+	}
+
+	public static String getFieldName(String envString, String module) {
+		return getElementText(envString, module, "fieldName");
+
+	}
+
+	public static String getTimeout(String envString, String module) {
+		return getElementText(envString, module, "timeout");
+
+	}
+
+	public static String getMessageSet(String envString, String module) {
+		return getElementText(envString, module, "messageSet");
+
+	}
+
+	public static Map<String, Map<String, String>> getListenMap() {
+
+		Map<String, Map<String, String>> listenMap = new HashMap<String, Map<String, String>>();
+		// ClassPathResource classPathResource = new
+		// ClassPathResource("tibco.xml");
+		try {
+			String xString = "/configuations/listen";
+			// File file = classPathResource.getFile();
+			SAXReader saxReader = new SAXReader();
+			// Document document2 = saxReader.read(file);
+			Document document2 = saxReader.read(new File(
+					"D:\\WebApp\\config\\tibco.xml"));
+			Element root = document2.getRootElement();
+			List<Node> nodelist = document2.selectNodes(xString);
+
+			for (int i = 0; i < nodelist.size(); i++) {
+				Map<String, String> listenItemMap = new HashMap<String, String>();
+				Element el1 = (Element) nodelist.get(i);
+
+				String env = el1.attributeValue("env");
+
+				listenItemMap.put("daemon", getListenDaemon(env));
+				listenItemMap.put("network", getListenNetwork(env));
+				listenItemMap.put("service", getListenService(env));
+				listenItemMap.put("listenSubject", getListenSuject(env));
+				listenItemMap.put("fieldName", getListenFieldName(env));
+
+				listenMap.put(env, listenItemMap);
+
+			}
+
+			if (listenMap.values().size() > 0) {
+				logger.debug("get listen list success");
+			}
+
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+
+		return listenMap;
+
+	}
+
+	public static String getListenNetwork(String envString) {
+		StringBuilder sBuilder = new StringBuilder();
+		sBuilder.append("/configuations/listen[@env='");
+		sBuilder.append(envString);
+		sBuilder.append("']/network");
+		String xString = sBuilder.toString();
+		Element element = getElement(xString);
+		if (element != null) {
+			return element.getText();
+		}
+
+		return StringUtils.EMPTY;
+
+	}
+
+	public static String getListenService(String envString) {
+		StringBuilder sBuilder = new StringBuilder();
+		sBuilder.append("/configuations/listen[@env='");
+		sBuilder.append(envString);
+		sBuilder.append("']/service");
+		String xString = sBuilder.toString();
+		Element element = getElement(xString);
+		if (element != null) {
+			return element.getText();
+		}
+
+		return StringUtils.EMPTY;
+
+	}
+
+	public static String getListenFieldName(String envString) {
+		StringBuilder sBuilder = new StringBuilder();
+		sBuilder.append("/configuations/listen[@env='");
+		sBuilder.append(envString);
+		sBuilder.append("']/fieldName");
+		String xString = sBuilder.toString();
+		Element element = getElement(xString);
+		if (element != null) {
+			return element.getText();
+		}
+
+		return StringUtils.EMPTY;
+
+	}
+
+	public static String getListenDaemon(String envString) {
+		StringBuilder sBuilder = new StringBuilder();
+		sBuilder.append("/configuations/listen[@env='");
+		sBuilder.append(envString);
+		sBuilder.append("']/daemonList/daemon");
+		String xString = sBuilder.toString();
+		Element element = getElement(xString);
+		// ClassPathResource classPathResource = new
+		// ClassPathResource("tibco.xml");
+		try {
+			// File file = classPathResource.getFile();
+			SAXReader saxReader = new SAXReader();
+			// Document document2 = saxReader.read(file);
+			Document document2 = saxReader.read(new File(
+					"D:\\WebApp\\config\\tibco.xml"));
+			Element root = document2.getRootElement();
+			List<Node> nodelist = document2.selectNodes(xString);
+			if (nodelist != null && nodelist.size() > 0) {
+				Node[] nodes = new Node[nodelist.size()];
+				nodes = nodelist.toArray(nodes);
+				return ((Element) nodes[0]).getText();
+			} else {
+				return StringUtils.EMPTY;
+			}
+
+		} catch (Exception e) {
+			logger.error(String.format("getListenDaemon Error![messag:%s]",
+					e.getMessage()));
+			return StringUtils.EMPTY;
+		}
+
+	}
+
+	public static String getListenSuject(String envString) {
+		StringBuilder sBuilder = new StringBuilder();
+		sBuilder.append("/configuations/listen[@env='");
+		sBuilder.append(envString);
+		sBuilder.append("']/listenSubject");
+		String xString = sBuilder.toString();
+		Element element = getElement(xString);
+		if (element != null) {
+			return element.getText();
+		}
+
+		return StringUtils.EMPTY;
+
+	}
+
+	private static String getElementText(String envString, String module,
+			String name) {
+
+		String keyString = envString + module + name;
+
+		Object s = map.get(keyString);
+		if (s != null) {
+			return (String) s;
+
+		}
+		// ClassPathResource classPathResource = new
+		// ClassPathResource("tibco.xml");
+
+		try {
+			// File file = classPathResource.getFile();
+			SAXReader saxReader = new SAXReader();
+			// Document document2 = saxReader.read(file);
+			Document document2 = saxReader.read(new File(
+					"D:\\WebApp\\config\\tibco.xml"));
+			Element root = document2.getRootElement();
+			StringBuilder sBuilder = new StringBuilder();
+			sBuilder.append("/configuations/configuration[@env='");
+			sBuilder.append(envString);
+			sBuilder.append("' and @module='");
+			sBuilder.append(module);
+			sBuilder.append("']/tibrvProxy/");
+			sBuilder.append(name);
+			String xString = sBuilder.toString();
+			Element element = (Element) document2.selectSingleNode(xString);
+			if (element != null) {
+				String string = element.getText();
+				map.put(keyString, string);
+				logger.debug(String
+						.format("getElement Success![Element:%s;text:%s]",
+								name, string));
+
+				return string;
+			}
+
+		} catch (Exception e) {
+			logger.error(String.format("getElement Error![Element:%s]", name));
+		}
+
+		return StringUtils.EMPTY;
+
+	}
+
+	private static Element getElement(String xpath) {
+		// ClassPathResource classPathResource = new
+		// ClassPathResource("tibco.xml");
+		try {
+			// File file = classPathResource.getFile();
+			SAXReader saxReader = new SAXReader();
+			// Document document2 = saxReader.read(file);
+			Document document2 = saxReader.read(new File(
+					"D:\\WebApp\\config\\tibco.xml"));
+			return (Element) document2.selectSingleNode(xpath);
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+
+		return null;
+	}
+
+	private static String getElementText(String xpath) {
+		Element element = getElement(xpath);
+		if (element != null) {
+			return element.getText();
+		}
+
+		return StringUtils.EMPTY;
+
+	}
+
+	private static Node[] getDaemons(String envString, String module) {
+		// ClassPathResource classPathResource = new
+		// ClassPathResource("tibco.xml");
+
+		try {
+			// File file = classPathResource.getFile();
+			SAXReader saxReader = new SAXReader();
+			// Document document2 = saxReader.read(file);
+			Document document2 = saxReader.read(new File(
+					"D:\\WebApp\\config\\tibco.xml"));
+			Element root = document2.getRootElement();
+			StringBuilder sBuilder = new StringBuilder();
+			sBuilder.append("/configuations/configuration[@env='");
+			sBuilder.append(envString);
+			sBuilder.append("' and @module='");
+			sBuilder.append(module);
+			sBuilder.append("']/daemonList/daemon");
+			String xString = sBuilder.toString();
+
+			List<Node> nodelistList = document2.selectNodes(xString);
+
+			if (nodelistList != null) {
+				logger.debug("getDaemonList Success!");
+				Node[] nodes2 = new Node[nodelistList.size()];
+				if (nodelistList.size() > 0) {
+					return nodelistList.toArray(nodes2);
+				} else {
+					logger.debug("getDaemonList Fail!");
+
+				}
+			}
+
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+
+		return null;
+	}
+
+}

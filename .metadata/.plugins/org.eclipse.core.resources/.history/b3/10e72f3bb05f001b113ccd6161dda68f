@@ -1,0 +1,327 @@
+package xm.httprequest;
+
+import java.io.*;
+import java.net.URLDecoder;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+import java.util.Map;
+
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
+//import oracle.net.aso.e;
+
+//import org.apache.catalina.tribes.group.interceptors.TwoPhaseCommitInterceptor.MapEntry;
+
+//import org.apache.commons.httpclient.util.TimeoutController;
+
+import javax.security.auth.Destroyable;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+import org.apache.logging.log4j.*;
+
+import xm.wxbase.CONST;
+
+
+
+public class HttpRequest implements IHttpRequest,Destroyable {
+
+	private CloseableHttpClient client = null;
+	private String urlString = null;
+	private RequestConfig requestConfig = RequestConfig.custom()
+			.setSocketTimeout(5000).setConnectTimeout(5000)
+			.setConnectionRequestTimeout(10000).build();
+
+	public void setClient(CloseableHttpClient client) {
+		this.client = client;
+	}
+
+	private Logger logger = LogManager.getLogger(HttpRequest.class);
+
+	public HttpRequest() {
+		client = HttpClients.createDefault();
+
+	}
+
+	public HttpRequest(boolean isHttps) {
+		this.client = getHttpsClient();
+	}
+
+	private CloseableHttpClient getHttpsClient() {
+		try {
+
+			X509TrustManager x509mgr = new X509TrustManager() {
+
+				@Override
+				public void checkClientTrusted(X509Certificate[] arg0,
+						String arg1) throws CertificateException {
+					// TODO Auto-generated method stub
+
+				}
+
+				@Override
+				public void checkServerTrusted(X509Certificate[] arg0,
+						String arg1) throws CertificateException {
+					// TODO Auto-generated method stub
+
+				}
+
+				@Override
+				public X509Certificate[] getAcceptedIssuers() {
+					// TODO Auto-generated method stub
+					return null;
+				}
+			};
+			SSLContext sslContext = SSLContext.getInstance("TLS");
+			sslContext.init(null, new TrustManager[] { x509mgr }, null);
+			// //创建HttpsURLConnection对象，并设置其SSLSocketFactory对象
+			SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(
+					sslContext,
+					SSLConnectionSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+
+			// HttpsURLConnection对象就可以正常连接HTTPS了，无论其证书是否经权威机构的验证，只要实现了接口X509TrustManager的类MyX509TrustManager信任该证书。
+			return HttpClients.custom().setSSLSocketFactory(sslsf).build();
+
+		} catch (KeyManagementException e) {
+
+			e.printStackTrace();
+
+		} catch (NoSuchAlgorithmException e) {
+
+			e.printStackTrace();
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+
+		}
+
+		// 创建默认的httpClient实例.
+		return HttpClients.createDefault();
+
+	}
+
+	@Override
+	public String doGet(String httpUrl, Map<String, String> params)
+			throws Exception {
+		// TODO Auto-generated method stub
+		if (httpUrl != null && httpUrl.trim().length() > 0) {
+			this.urlString = httpUrl;
+		}
+		String url = httpUrl==null ? urlString : httpUrl;
+
+		if (params != null) {
+			int cnt = 0;
+			for (Map.Entry<String, String> e : params.entrySet()) {
+				if (cnt == 0) {
+					url += "?";
+
+				} else {
+
+					url += "&&";
+
+				}
+				url = url + e.getKey() + "=" + e.getValue();
+				cnt++;
+			}
+		}
+
+		// HttpPost httpPost = new HttpPost(httpUrl);
+		HttpGet httpGet = new HttpGet(url);
+
+		httpGet.setConfig(requestConfig);
+		// message = URLEncoder.encode(message, "UTF-8") ;
+		
+		
+		CloseableHttpResponse  response = client.execute(httpGet);
+		String result ="";
+		
+	     BufferedReader in = null ;
+	        try {
+	            InputStream content = response.getEntity().getContent() ;
+	            in = new BufferedReader(new InputStreamReader(content));
+	            StringBuilder sb = new StringBuilder();
+	            String line = "" ;
+	            while ((line = in.readLine()) != null) {
+	                sb.append(line);
+	            }
+	            result = sb.toString() ;
+	            System.out.println("接收原始报文：" + URLDecoder.decode(result, "UTF-8")) ;
+	        } finally {
+	            EntityUtils.consume(response.getEntity());
+	            response.close();
+	        }
+	        return result ;
+		
+
+	}
+
+	@Override
+	public String doPost(String httpUrl, String message) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String doPost(String httpUrl, Map<String, String> params)
+			throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public JSONObject doPostData(String httpUrl, Object obj) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String doPostJsonData(String httpUrl, String jsonstring)
+			throws Exception {
+		String result=null;
+		if (httpUrl != null && httpUrl.trim().length() > 0) {
+			this.urlString = httpUrl;
+		}
+		String url = httpUrl==null ? urlString : httpUrl;
+		
+		BufferedReader in = null ;
+        HttpPost httpPost = new HttpPost(url);
+        httpPost.setConfig(requestConfig);
+        
+		//httpPost.setHeader("Content-Type", "application/json");
+		
+		StringEntity entity = new StringEntity(jsonstring);
+		entity.setContentType("application/json");
+		entity.setContentEncoding("UTF-8");
+		
+		httpPost.setEntity(entity);
+		
+		
+		CloseableHttpResponse response = client.execute(httpPost);
+		
+		InputStream content = response.getEntity().getContent() ;
+		in = new BufferedReader(new InputStreamReader(content, "UTF-8"));
+
+        StringBuilder sb = new StringBuilder();
+        String line = "" ;
+        while ((line = in.readLine()) != null) {
+            sb.append(line);
+        }
+        result = sb.toString() ;
+		
+		
+		
+		
+		return result;
+	}
+
+	@Override
+	public String doPostJsonData(String httpUrl, JSONObject json)
+			throws Exception {
+		return doPostJsonData(httpUrl, json.toJSONString());
+	}
+
+	@Override
+	public void setUrlString(String url) {
+		this.urlString = url;
+		
+	}
+	
+	
+	public JSONObject DownloadFile(JSONObject json) {
+		
+		JSONArray jsa=(JSONArray) json.get(CONST.FILE_LIST_KEY);
+		for (Object object : jsa) {
+			JSONObject jo1= (JSONObject) object;
+			String url= jo1.getString(CONST.DOWNLOAD_URL_KEY);
+			logger.debug(url);
+			int idx1= url.lastIndexOf("/")+1;
+			String filename=url.substring(idx1);
+			String pathString=CONST.LOCAL_ROOT_PATH+"\\"+filename;
+			HttpGet httpGet= new HttpGet(url);
+			CloseableHttpResponse response=null;
+			try {
+			 response = client.execute(httpGet);
+			
+				HttpEntity resEntity = response.getEntity();
+			     System.out.println("resEntity: "+resEntity);
+			     
+			     byte[] data = EntityUtils.toByteArray(resEntity);
+			     FileOutputStream fs= this.getOutputStream(pathString);
+			     FileOutputStream fos = fs;
+			     fos.write(data);
+			     fos.close();
+			     EntityUtils.consume(resEntity);
+			     jo1.put(CONST.LOCAL_FLIE_KEY, pathString);
+			     jo1.put(CONST.DOWNLOAD_FLAG_KEY, "Y");
+				
+			} catch (Exception e) {
+				logger.error(e.getMessage(),e);
+			}
+			finally
+			{
+				if(response!=null)
+				{
+					try {
+						response.close();
+					} catch (Exception e2) {
+						logger.error(e2.getMessage(),e2);
+					}
+					
+				}
+				
+			}
+			
+		}//end for
+		
+        return json;
+		
+	}
+	
+	
+	public void Destroy() {
+		try {
+			this.client.close();
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		
+	}
+	
+	private FileOutputStream getOutputStream(String path)
+	{
+		File file=new File(path);
+		try {
+			if(!file.getParentFile().exists())
+			{
+				file.getParentFile().mkdir();
+			}
+			return new FileOutputStream(file);
+			
+		} catch (Exception e) {
+			logger.error(e.getMessage(),e);
+		}
+		
+		
+		return null;
+	}
+
+}
+

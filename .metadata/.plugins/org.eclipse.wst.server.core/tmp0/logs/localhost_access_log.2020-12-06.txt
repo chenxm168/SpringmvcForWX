@@ -1,0 +1,11 @@
+127.0.0.1 - - [06/Dec/2020:20:19:48 +0800] "GET / HTTP/1.1" 200 210
+127.0.0.1 - - [06/Dec/2020:20:19:51 +0800] "GET /WEB-INF/classes/xm/controller/viewcontroller/TestControl2.java HTTP/1.1" 404 949
+127.0.0.1 - - [06/Dec/2020:20:53:10 +0800] "GET / HTTP/1.1" 200 210
+127.0.0.1 - - [06/Dec/2020:20:53:13 +0800] "GET /WEB-INF/classes/xm/Tib/XmlAndJsonUtils.java HTTP/1.1" 404 949
+127.0.0.1 - - [06/Dec/2020:20:53:29 +0800] "GET /test2.do HTTP/1.1" 200 -
+127.0.0.1 - - [06/Dec/2020:21:01:29 +0800] "GET / HTTP/1.1" 200 210
+127.0.0.1 - - [06/Dec/2020:21:01:30 +0800] "GET /WEB-INF/classes/xm/Tib/XmlAndJsonUtils.java HTTP/1.1" 404 949
+127.0.0.1 - - [06/Dec/2020:21:20:43 +0800] "GET / HTTP/1.1" 200 210
+127.0.0.1 - - [06/Dec/2020:21:20:45 +0800] "GET /WEB-INF/classes/xm/Tib/XmlAndJsonUtils.java HTTP/1.1" 404 949
+127.0.0.1 - - [06/Dec/2020:22:10:37 +0800] "GET / HTTP/1.1" 200 210
+127.0.0.1 - - [06/Dec/2020:22:10:40 +0800] "GET /WEB-INF/classes/xm/Tib/XmlAndJsonUtils.java HTTP/1.1" 404 949

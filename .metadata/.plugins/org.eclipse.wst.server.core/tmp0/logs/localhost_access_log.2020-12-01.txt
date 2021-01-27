@@ -1,0 +1,9 @@
+127.0.0.1 - - [01/Dec/2020:21:35:27 +0800] "GET / HTTP/1.1" 200 52
+0:0:0:0:0:0:0:1 - - [01/Dec/2020:21:35:28 +0800] "GET /WEB-INF/classes/xm/tibcointerface/TibInterface.java HTTP/1.1" 404 949
+0:0:0:0:0:0:0:1 - - [01/Dec/2020:21:36:06 +0800] "GET /test2.do HTTP/1.1" 200 92
+127.0.0.1 - - [01/Dec/2020:21:37:27 +0800] "GET / HTTP/1.1" 200 52
+0:0:0:0:0:0:0:1 - - [01/Dec/2020:21:37:28 +0800] "GET /WEB-INF/classes/xm/controller/viewcontroller/TestControl2.java HTTP/1.1" 404 949
+127.0.0.1 - - [01/Dec/2020:21:39:46 +0800] "GET / HTTP/1.1" 200 52
+0:0:0:0:0:0:0:1 - - [01/Dec/2020:21:39:47 +0800] "GET /WEB-INF/classes/xm/tibcointerface/TibInterface.java HTTP/1.1" 404 949
+127.0.0.1 - - [01/Dec/2020:21:50:55 +0800] "GET / HTTP/1.1" 200 52
+0:0:0:0:0:0:0:1 - - [01/Dec/2020:21:50:56 +0800] "GET /WEB-INF/classes/log4j2.xml HTTP/1.1" 404 949

@@ -1,0 +1,94 @@
+package xm.wxbase;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.json.JsonObject;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+
+import xm.httprequest.HttpRequest;
+
+public class DownLoadFromCloudSrv implements ApplicationContextAware {
+	protected Logger log = LogManager.getLogger(this.getClass());
+	private ApplicationContext context;
+	private String tocken;
+
+	@Override
+	public void setApplicationContext(ApplicationContext context)
+			throws BeansException {
+		this.context = context;
+
+	}
+
+	private DownLoadFromCloudSrv(String token) {
+		this.tocken = token;
+	}
+
+	public static DownLoadFromCloudSrv getInstance(String token) {
+		return new DownLoadFromCloudSrv(token);
+	}
+
+	public Map<String, String> downFile(List<String> cloudIdList) {
+		String url = CONST.DEFAULT_HTTPS_URL + this.tocken;
+		HttpRequest https = new HttpRequest(true);
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put(CONST.ENV_KEY, CONST.DEFAULT_ENV);
+		JSONArray jsonArray = new JSONArray();
+		for (String cloudid : cloudIdList) {
+			JSONObject jObject = new JSONObject();
+			jObject.put(CONST.FILE_ID_KEY, cloudid);
+			jObject.put(CONST.MAX_AGE_KEY, CONST.DEFAULT_MAX_AGE);
+			jsonArray.add(jObject);
+
+		}
+		jsonObject.put(CONST.FILE_LIST_KEY, jsonArray);
+		String msg = jsonObject.toJSONString();
+		try {
+			String rString = https.doPostJsonData(url, msg);
+			log.info("get download url message!");
+			log.info(rString);
+
+			JSONObject jo = JSONObject.parseObject(rString);
+			String errcode = (String) jo.get(CONST.ERR_CODE_KEY);
+			if (Integer.valueOf(errcode) != 0) {
+				log.error(String.format(
+						"get download url error! errcode:%s;errmsg:%s",
+						jo.getString(CONST.ERR_CODE_KEY),
+						(String) jo.getString(CONST.ERR_MSG_KEY)));
+				https.Destroy();
+				return null;
+			}
+			JSONArray fja= jo.getJSONArray(CONST.FILE_LIST_KEY);
+			Map<String, String> map= new HashMap<String, String>();
+			for (Object object : fja) {
+				JSONObject jo2= (JSONObject) object;
+				String status= jo2.getString(CONST.STATUS_KEY);
+				if(Integer.valueOf(status)!=0)
+				{
+					continue;
+				}
+				map.put(jo2.getString(CONST.FILE_ID_KEY), jo2.getString(CONST.DOWNLOAD_URL_KEY));
+				
+			}
+			https.Destroy();
+			
+			return map;
+
+		} catch (Exception e) {
+			https.Destroy();
+			log.error(e.getMessage(), e);
+			
+		}
+
+		return null;
+	}
+}

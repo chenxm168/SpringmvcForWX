@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<!-- key =items v= map key= item1 v = map key =item12 v = map key = item1 
+	key = item2 key = item2 -->
+<!-- <JsonMessage> <Service>asduserloginsrv</Service> <Userinfo> <ENV>test</ENV> 
+	<Mobilemodel></Mobilemodel> </Userinfo> <Message> <MODULE>oic</MODULE> <MESSAGENAME>UserLogin</MESSAGENAME> 
+	<PARAMMAP> <USERID>huanghanjie1</USERID> <PASSWORD>1</PASSWORD> <USERGROUPNAME></USERGROUPNAME> 
+	</PARAMMAP> <Body/> </Message> </JsonMessage> -->
+<data>
+
+	<JsonMessage>
+		<Url></Url>
+		<Service>asdquerysrv</Service>
+		<Userinfo>
+			<ENV>test</ENV>
+			<USERID>huanghanjie1</USERID>
+			<MOBILEMODE></MOBILEMODE>
+		</Userinfo>
+		<Message>
+			<MODULE>qry</MODULE>
+			<MESSAGENAME>GetQueryResult</MESSAGENAME>
+			<QUERYID>GetInspectionRecordList</QUERYID>
+			<VERSION>00200</VERSION>
+			<PARAMMAP>
+				<MACHINENAME>%A1CVD01%</MACHINENAME>
+				<UNITNAME>%A1CVD01_CV1%</UNITNAME>
+				<EVENTUSER>huanghanjie1</EVENTUSER>
+				<!-- <MACHINEGROUPNAME>%GA1CVD01%</MACHINEGROUPNAME> -->
+			</PARAMMAP>
+			<Body />
+
+		</Message>
+	</JsonMessage>
+</data>    

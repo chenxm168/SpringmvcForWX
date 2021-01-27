@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+    http://www.springframework.org/schema/beans/spring-beans.xsd  
+    http://www.springframework.org/schema/context   
+    http://www.springframework.org/schema/context/spring-context.xsd  
+    http://www.springframework.org/schema/mvc  
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    
+    
+    <!-- Quartz Config -->
+	
+	
+       <!-- 加入要执行任的类 -->
+      <bean id="scheduleJob1" class="xm.scheduler.ScheduleJob1"></bean>
+      
+      <bean id="scheduleJobDetail1" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <!-- 定时执行的类 -->
+        <property name="targetObject" ref="scheduleJob1"/>
+        <!-- 具体的方法 -->
+        <property name="targetMethod" value="doSchedule"/>
+        <!-- 是否允许任务并发执行。当值为false时，表示必须等到前一个线程处理完毕后才再启一个新的线程 -->  
+         <property name="concurrent" value="false"/>
+    </bean>
+    
+      <bean id="scheduleJob1Trigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <!-- 加入相关的执行类和方法 -->
+        <property name="jobDetail" ref="scheduleJobDetail1"/>
+        <!-- 设置时间规则 （为了方便测试，设置成一分钟一次。具体的规则见详情）-->
+        <property name="cronExpression" value="00 * * * * ?"/>    
+    </bean>
+    
+      <!-- 加入调度工厂 ,设置调度触发器即可-->
+    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="scheduleJob1Trigger"/>
+            </list>
+        </property>
+    </bean>
+
+
+
+
+	<!-- End Quartz Config -->
+    
+    
+    
+    </beans>

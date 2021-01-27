@@ -1,0 +1,10 @@
+1562644439442	Rename type 'PagePrivilege'
+1562651036909	Rename method 'fingByIdAndPrivileges'
+1562653740357	Rename package 'xm.wx.service'
+1562653793553	Rename package 'xm.wx.serviceImpl'
+1562729964815	Rename field 'users'
+1562744577129	Rename field 'rep'
+1562747796586	Rename field 'userList'
+1562747830830	Rename field 'privilegeList'
+1562828949983	Copy file
+1562830091957	Copy compilation unit

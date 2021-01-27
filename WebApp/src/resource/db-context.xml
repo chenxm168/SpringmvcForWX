@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context.xsd
+          http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+          http://www.springframework.org/schema/data/jpa
+          http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+          http://www.springframework.org/schema/data/jpa
+          http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+
+
+
+
+	<!-- <context:property-placeholder location="fbdb.properties" /> -->
+
+	<!-- 配置C3P0数据源 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="user" value="SYSDBA"></property>
+		<property name="password" value="masterkey"></property>
+		<property name="jdbcUrl" value="jdbc:firebirdsql://localhost:3050/d:\\CIMPC.FDB?encoding=UTF8"></property>
+		<property name="driverClass" value="org.firebirdsql.jdbc.FBDriver"></property>
+		<property name="initialPoolSize" value="2"></property>
+		<property name="maxPoolSize" value="10"></property>
+	</bean>
+
+	<!-- <bean id="dataSource" class="org.firebirdsql.pool.FBWrappingDataSource"> 
+		<property name="userName" value="SYSDBA"></property> <property name="password" 
+		value="masterkey"></property> <property name="jdbcUrl" value="jdbc:firebirdsql:localhost/3050:D:\\CIMPC.FDB"></property> -->
+	<!-- <property name="database" value="jdbc:firebirdsql://localhost:3050/d:\\CIMPC.FDB"></property> 
+		<property name="minPoolSize" value="2"></property> <property name="maxPoolSize" 
+		value="10"></property> </bean> -->
+
+
+	<!-- 配置Spring的jdbcTemplate 并注入一个dataSource数据源 -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
+
+
+</beans>

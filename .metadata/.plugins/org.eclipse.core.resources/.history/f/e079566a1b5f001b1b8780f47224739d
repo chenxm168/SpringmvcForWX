@@ -1,0 +1,103 @@
+package xm.wxbase;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import com.alibaba.fastjson.JSONObject;
+import xm.httprequest.HttpRequest;
+
+public class CloudTokenManager {
+	private static ConcurrentHashMap<String,String> map = new ConcurrentHashMap<String,String>();
+	private static final String TOKEN_KEY = "access_token";
+	private static final String GET_TIME_KEY = "getime";
+	private static final String EXPRIRES_KEY = "expires_in";
+	private static final String ERR_CODE_KEY = "errcode";
+	private static final String ERR_MSG_KEY = "errmsg";
+	private static final String APP_ID = "wx8d95d0efac32322b";
+	private static final String APP_SECRET = "1ef0e8edaf44ef9747fb6634f25a87d4";
+	protected static Logger log = LogManager.getLogger(CloudTokenManager.class);
+	private static SimpleDateFormat formatter = new SimpleDateFormat(
+			"yyyy-MM-dd HH:mm:ss");
+
+	// private static String
+
+	public static synchronized String getCloudToken() {
+
+		if (map.contains(TOKEN_KEY)) {
+			if (verifyExprires()) {
+				return (String) map.get(TOKEN_KEY);
+			}
+
+		}
+
+		if (requestToken()) {
+			return (String) map.get(TOKEN_KEY);
+		}
+
+		return StringUtils.EMPTY;
+	}
+
+	private static boolean requestToken() {
+
+		HttpRequest https = new HttpRequest(true);
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("grant_type", "client_credential");
+		map.put("appid", APP_ID);
+		map.put("secret", APP_SECRET);
+		try {
+			String rString = https.doGet(
+					"https://api.weixin.qq.com/cgi-bin/token", map);
+			log.info(rString);
+			JSONObject jsonObject = JSONObject.parseObject(rString);
+			String errCode = jsonObject.getString(ERR_CODE_KEY);
+			if (!errCode.equals("0")) {
+				log.error("request cloud tocken error!error message:"
+						+ jsonObject.getString(ERR_MSG_KEY));
+				return false;
+			}
+			Date date = new Date(System.currentTimeMillis());
+			String timestamp = formatter.format(date);
+			map.put(TOKEN_KEY, jsonObject.getString(TOKEN_KEY));
+			map.put(GET_TIME_KEY, timestamp);
+			map.put(EXPRIRES_KEY, jsonObject.getString(EXPRIRES_KEY));
+			return true;
+
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
+		}
+
+		return false;
+	}
+
+	private static boolean verifyExprires() {
+		String epsString = (String) map.get(EXPRIRES_KEY);
+		String timestamp = (String) map.get(GET_TIME_KEY);
+
+		try {
+			long epsLong = Long.valueOf(epsString);
+			epsLong = epsLong - 300;
+			Date getDate = formatter.parse(timestamp);
+			long l1 = getDate.getTime() + (epsLong * 1000);
+			Calendar getCalendar = Calendar.getInstance();
+			getCalendar.setTimeInMillis(l1);
+			Calendar nowCalendar = Calendar.getInstance();
+			if (nowCalendar.after(getCalendar)) {
+				return true;
+			} else {
+				return false;
+			}
+
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
+		}
+
+		return false;
+	}
+
+}

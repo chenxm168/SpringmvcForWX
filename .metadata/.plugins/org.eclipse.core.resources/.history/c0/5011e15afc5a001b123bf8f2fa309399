@@ -1,0 +1,11 @@
+package xm.message.wx;
+
+public class AsdFileUploadSrv extends AbsWXMsgSrv {
+
+	@Override
+	public String Process(String jsonMessage) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

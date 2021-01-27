@@ -1,0 +1,5 @@
+package xm.controller;
+
+public class FileUploadController extends AbsController {
+
+}

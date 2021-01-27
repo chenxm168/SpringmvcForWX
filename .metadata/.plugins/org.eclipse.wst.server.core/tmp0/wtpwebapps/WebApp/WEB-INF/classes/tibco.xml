@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuations>
+	<configuration env="prod" module="oic">
+		<tibrvProxy name="mesProxy">
+			<service>8400</service>
+			<network>;225.11.11.4</network>
+			<sourceSubject>TRULY.G5A.MES.PRD.FAB.WX</sourceSubject>
+			<targetSubject>TRULY.G5A.MES.PRD.FAB.CNMsvr</targetSubject>
+			<fieldName>xmlData</fieldName>
+			<timeout>30</timeout>
+			<messageSet>mesmsg.xml</messageSet>
+		</tibrvProxy>
+		<daemonList>
+			<daemon>tcp:10.116.110.101:7500</daemon>
+			<daemon>tcp:10.116.110.102:7500</daemon>
+			<daemon>tcp:10.116.110.103:7500</daemon>
+		</daemonList>
+	</configuration>
+	
+		<configuration env="prod" module="pms">
+		<tibrvProxy name="mesProxy">
+			<service>8900</service>
+			<network>;225.11.11.9</network>
+			<sourceSubject>TRULY.G5A.MES.PRD.FAB.WX</sourceSubject>
+			<targetSubject>TRULY.G5A.MES.PRD.FAB.PMMsvr</targetSubject>
+			<fieldName>xmlData</fieldName>
+			<timeout>30</timeout>
+			<messageSet>mesmsg.xml</messageSet>
+		</tibrvProxy>
+		<daemonList>
+			<daemon>tcp:10.116.110.101:7500</daemon>
+			<daemon>tcp:10.116.110.102:7500</daemon>
+			<daemon>tcp:10.116.110.103:7500</daemon>
+		</daemonList>
+	</configuration>
+
+	<configuration env="prod" module="qry">
+		<tibrvProxy name="mesProxy">
+			<service>8800</service>
+			<network>;225.11.11.8</network>
+			<sourceSubject>TRULY.G5A.MES.PRD.FAB.WX</sourceSubject>
+			<targetSubject>TRULY.G5A.MES.PRD.FAB.QRYsvr</targetSubject>
+			<fieldName>xmlData</fieldName>
+			<timeout>30</timeout>
+			<messageSet>querymsg.xml</messageSet>
+		</tibrvProxy>
+		<daemonList>
+			<daemon>tcp:10.116.110.101:7500</daemon>
+			<daemon>tcp:10.116.110.102:7500</daemon>
+			<daemon>tcp:10.116.110.103:7500</daemon>
+		</daemonList>
+	</configuration>
+	<configuration env="test" module="oic">
+		<tibrvProxy name="mesProxy">
+			<service>8400</service>
+			<network>;225.11.11.4</network>
+			<sourceSubject>TRULY.G5A.MES.TST.FAB.WX</sourceSubject>
+			<targetSubject>TRULY.G5A.MES.TST.FAB.CNMsvr</targetSubject>
+
+			<fieldName>xmlData</fieldName>
+			<timeout>30</timeout>
+			<messageSet>mesmsg.xml</messageSet>
+		</tibrvProxy>
+		<daemonList>
+			<daemon>tcp:10.116.111.201:7500</daemon>
+		</daemonList>
+	</configuration>
+
+	<configuration env="test" module="pms">
+		<tibrvProxy name="mesProxy">
+			<service>8900</service>
+			<network>;225.11.11.9</network>
+			<sourceSubject>TRULY.G5A.MES.TST.FAB.WX</sourceSubject>
+		 	<targetSubject>TRULY.G5A.MES.TST.FAB.PMMsvr</targetSubject>
+		<!--   <targetSubject>TRULY.FAB.MES.wangshiming.FAB.PMMsvr</targetSubject> -->
+
+			<fieldName>xmlData</fieldName>
+			<timeout>30</timeout>
+			<messageSet>mesmsg.xml</messageSet>
+		</tibrvProxy>
+		<daemonList>
+			 <daemon>tcp:10.116.111.201:7500</daemon>  
+			<!-- <daemon>tcp:172.28.48.46:7500</daemon> -->
+		</daemonList>
+	</configuration>
+
+	<configuration env="test" module="qry">
+		<tibrvProxy name="mesProxy">
+			<service>8800</service>
+			<network>;225.11.11.8</network>
+			<sourceSubject>TRULY.G5A.MES.TST.FAB.WX</sourceSubject>
+			<targetSubject>TRULY.G5A.MES.TST.FAB.QRYsvr</targetSubject>
+			<fieldName>xmlData</fieldName>
+			<timeout>30</timeout>
+			<messageSet>querymsg.xml</messageSet>
+		</tibrvProxy>
+		<daemonList>
+			<daemon>tcp:10.116.111.201:7500</daemon>
+		</daemonList>
+	</configuration>
+
+
+
+
+	<listen env="test">
+		<service>8400</service>
+		<network>;225.11.11.4</network>
+		<listenSubject>TRULY.G5A.MES.TST.FAB.WX</listenSubject>
+		<fieldName>xmlData</fieldName>
+		<daemonList>
+			<daemon>tcp:10.116.111.201:7500</daemon>
+		</daemonList>
+
+	</listen>
+
+	<listen env="prod">
+		<service>8400</service>
+		<network>;225.11.11.4</network>
+		<listenSubject>TRULY.G5A.MES.PRD.FAB.WX</listenSubject>
+		<fieldName>xmlData</fieldName>
+		<daemonList>
+			<daemon>tcp:10.116.110.101:7500</daemon>
+			<daemon>tcp:10.116.110.102:7500</daemon>
+			<daemon>tcp:10.116.110.103:7500</daemon>
+		</daemonList>
+
+	</listen>
+
+
+
+</configuations>

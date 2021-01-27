@@ -1,0 +1,75 @@
+package xm.wxbase;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
+
+import xm.httprequest.HttpRequest;
+
+public class DownLoadFromCloudSrv implements ApplicationContextAware {
+	protected  Logger log = LogManager.getLogger(this.getClass());
+	private ApplicationContext context;
+	private String tocken;
+	private static final String DEFAULT_ENV="asd-smart-cloud-k2u5e";
+	private static final String DEFAULT_HTTPS_URL="https://api.weixin.qq.com/tcb/batchdownloadfile?access_token=";
+	private static final String ENV_KEY="env";
+	private static final String FILE_LIST_KEY="file_list";
+	private static final String FILE_ID_KEY="fileid";
+	private static final String MAX_AGE_KEY="max_age";
+	private static final String DEFAULT_MAX_AGE="7200";
+	
+
+	@Override
+	public void setApplicationContext(ApplicationContext context)
+			throws BeansException {
+		this.context=context;
+		
+	}
+	
+	private DownLoadFromCloudSrv(String token)
+	{
+		this.tocken= token;
+	}
+	
+	public DownLoadFromCloudSrv getDownLoadFromCloudSrv(String token)
+	{
+		return new DownLoadFromCloudSrv(token);
+	}
+	
+	public Map<String, String>downFile(List<String> cloudIdList)
+	{
+		String url= DEFAULT_HTTPS_URL+this.tocken;
+		HttpRequest https= new HttpRequest(true);
+		JSONObject jsonObject = new JSONObject();
+		jsonObject.put(ENV_KEY, DEFAULT_ENV);
+		JSONArray jsonArray = new JSONArray();
+		for (String cloudid : cloudIdList) {
+			JSONObject jObject=new JSONObject();
+			jObject.put(FILE_ID_KEY, cloudid);
+			jObject.put(MAX_AGE_KEY, DEFAULT_MAX_AGE);
+			jsonArray.add(jObject);
+			
+		}
+		jsonObject.put(FILE_LIST_KEY, jsonArray);
+		String msg= jsonObject.toJSONString();
+		try {
+		 String rString=	https.doPostJsonData(url, msg);
+		 log.info("get download url success!");
+		 log.info(rString);
+			
+		} catch (Exception e) {
+			log.error(e.getMessage(),e);
+		}
+		
+		return null;
+	}
+
+}

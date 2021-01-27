@@ -1,0 +1,59 @@
+package xm.wxbase;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import xm.httprequest.HttpRequest;
+import antlr.Token;
+
+
+
+public class CloudTokenManager {
+	private static ConcurrentHashMap map = new ConcurrentHashMap();
+	private static String expires=StringUtils.EMPTY;
+	private   static final String TOKEN_KEY="tokenkey";
+	private static final String GET_TIME="getime";
+	private static final String EXPRIRES="expires";
+	private static final String APP_ID="wx8d95d0efac32322b";
+	private static final String APP_SECRET="1ef0e8edaf44ef9747fb6634f25a87d4";
+	protected Logger log = LogManager.getLogger(CloudTokenManager.class);
+//	private static String
+	
+public  static synchronized  String  getCloudToken() {
+	
+	String token= map.get(TOKEN_KEY);
+	if(token==null)
+	{
+		
+	}
+	
+	
+	return StringUtils.EMPTY;
+}
+
+private static String requestToken() {
+	
+	HttpRequest https=new HttpRequest(true);
+	Map<String, String> map=new HashMap<String, String>();
+	map.put("grant_type", "client_credential");
+	map.put("appid", "wx8d95d0efac32322b");
+	map.put("secret", "1ef0e8edaf44ef9747fb6634f25a87d4");
+	try {
+	String rString=	https.doGet("https://api.weixin.qq.com/cgi-bin/token", map);
+	log.info(rString);
+		
+	} catch (Exception e) {
+		// TODO: handle exception
+	}
+	
+	
+}
+
+
+
+}

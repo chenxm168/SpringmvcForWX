@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sets>
+	<global>
+		<asdlocation>
+			<latitude>22.854119</latitude>
+			<longitude>115.36502</longitude>
+			<accuracy>5000</accuracy>
+			<verifyflag>Y</verifyflag>
+		</asdlocation>
+		<navbar>
+			<testnavbar>
+				<backcolor>#FF7F50</backcolor>
+				<barfontcolor>#000000</barfontcolor>
+			</testnavbar>
+			<prodnavbar>
+			</prodnavbar>
+		</navbar>
+		<ssidlist>
+			<ssid>CIM_WIFI</ssid>
+			<ssid>ASD-guest</ssid>
+			<ssid>newtrulyoffice</ssid>
+			<ssid>newtrulyoffice2</ssid>
+		</ssidlist>
+	</global>
+	<pages>
+		<page name="plantask">
+		  <setting>
+		    <tasklisttitle>维护列表</tasklisttitle>
+		    <hdfontsize>12px</hdfontsize>
+		    <hdfontweight>600</hdfontweight>
+		    <hdfontcolor>white</hdfontcolor>
+		    <hdbackcolor></hdbackcolor>
+		    <warningcolor></warningcolor>
+		    <checkedStatecolor></checkedStatecolor>
+		    <checkstatetablewidth>1800px</checkstatetablewidth>
+		    <creatstatetablewidth>1500px</creatstatetablewidth>
+		    <cellfontsize>10px</cellfontsize>
+		    <cellbackcolor></cellbackcolor>
+		    <rowcheckedbackcolor></rowcheckedbackcolor>
+		  </setting>
+		   <tables>
+			<tasklist name="tasklist">
+				<selectbox>Y</selectbox>
+				<tablename>tasklist</tablename>
+				<title>维护列表</title>
+				<headers>
+					<header >
+						<index>0</index>
+						<id>CHECK</id>
+						<name>选择</name>
+						<valuename></valuename>
+						<defaulvalue>N</defaulvalue>
+						<width>10</width>
+						<show>N</show>
+					</header>
+
+					<header >
+						<index>1</index>
+						<name>设备单元</name>
+						<valuename>UNITNAME</valuename>
+						<defaulvalue></defaulvalue>
+						<width>30</width>
+						<show>Y</show>
+					</header>
+
+					<header >
+						<index>2</index>
+						<name>维护名称</name>
+						<valuename>CLEANMAINTENANCENAME</valuename>
+						<defaulvalue></defaulvalue>
+						<width>70</width>
+						<show>Y</show>
+					</header>
+
+					<header >
+						<index>3</index>
+						<name>维护状态</name>
+						<valuename>CLEANMAINTSTATUS</valuename>
+						<defaulvalue></defaulvalue>
+						<width>15</width>
+						<show>Y</show>
+					</header>
+
+
+
+					<header >
+						<index>4</index>
+						<name>计划时间</name>
+						<valuename>CLEANMAINTPLANDATE</valuename>
+						<defaulvalue></defaulvalue>
+						<width>25</width>
+						<show>Y</show>
+					</header>
+
+					<header >
+						<index>5</index>
+						<name>执行时间</name>
+						<valuename>CLEANMAINTEXECUTEDATE</valuename>
+						<defaulvalue></defaulvalue>
+						<width>25</width>
+						<show>Y</show>
+					</header>
+
+					<header >
+						<index>6</index>
+						<name>结果</name>
+						<valuename>RESULT</valuename>
+						<defaulvalue>OK</defaulvalue>
+						<width>25</width>
+						<show>Y</show>
+					</header>
+
+					<header >
+						<index>7</index>
+						<name>执行描述</name>
+						<valuename>MAINTDODESC</valuename>
+						<defaulvalue></defaulvalue>
+						<width>25</width>
+						<show>Y</show>
+					</header>
+
+					<header >
+						<index>8</index>
+						<name>检查结果</name>
+						<valuename>CHECKRESULT</valuename>
+						<defaulvalue>OK</defaulvalue>
+						<width>25</width>
+						<show>Y</show>
+					</header>
+
+					<header >
+						<index>9</index>
+						<name>核查时间</name>
+						<valuename>CLEANMAINTCHECKDATE</valuename>
+						<defaulvalue>OK</defaulvalue>
+						<width>25</width>
+						<show>Y</show>
+					</header>
+
+					<header >
+						<index>10</index>
+						<name>检查者</name>
+						<valuename>CHECKUSER</valuename>
+						<defaulvalue>OK</defaulvalue>
+						<width>25</width>
+						<show>Y</show>
+					</header>
+
+					<header >
+						<index>11</index>
+						<name>上次执行时间</name>
+						<valuename>BEFOREEXECUTEDATE</valuename>
+						<defaulvalue></defaulvalue>
+						<width>25</width>
+						<show>Y</show>
+					</header>
+
+					<header >
+						<index>12</index>
+						<name>执行人</name>
+						<valuename>EXECUTEUSER</valuename>
+						<defaulvalue></defaulvalue>
+						<width>25</width>
+						<show>Y</show>
+					</header>
+
+					<header >
+						<index>13</index>
+						<name>项目类型</name>
+						<valuename>ITEMTYPE</valuename>
+						<defaulvalue></defaulvalue>
+						<width>25</width>
+						<show>Y</show>
+					</header>
+					
+					<header index="14">
+						<index>14</index>
+						<name>提醒时间</name>
+						<valuename>CLEANMAINTPREDATE</valuename>
+						<defaulvalue></defaulvalue>
+						<width>25</width>
+						<show>Y</show>
+					</header>
+
+					<header index="15">
+						<index>15</index>
+						<name>组名</name>
+						<valuename>GROUPNAME</valuename>
+						<defaulvalue></defaulvalue>
+						<width>25</width>
+						<show>Y</show>
+					</header>
+
+					<header index="16">
+						<index>16</index>
+						<name>设备名</name>
+						<valuename>MACHINENAME</valuename>
+						<defaulvalue></defaulvalue>
+						<width>25</width>
+						<show>Y</show>
+					</header>
+
+					<header index="17">
+						<index>17</index>
+						<name>设备组</name>
+						<valuename>MACHINEGROUPNAME</valuename>
+						<defaulvalue></defaulvalue>
+						<width>25</width>
+						<show>Y</show>
+					</header>
+
+					<header index="18">
+						<index>18</index>
+						<name>表格名称</name>
+						<valuename>FROMNAME</valuename>
+						<defaulvalue></defaulvalue>
+						<width>25</width>
+						<show>Y</show>
+					</header>
+
+					<header index="19">
+						<index>19</index>
+						<name>表格编号</name>
+						<valuename>FROMNUMBER</valuename>
+						<defaulvalue></defaulvalue>
+						<width>25</width>
+						<show>Y</show>
+					</header>
+
+					<header index="20">
+						<index>20</index>
+						<name>维护编号</name>
+						<valuename>PMCLEANCODE</valuename>
+						<defaulvalue></defaulvalue>
+						<width>25</width>
+						<show>Y</show>
+					</header>
+
+					<header index="21">
+						<index>21</index>
+						<name>维护ID</name>
+						<valuename>CLEANMAINTENANCEID</valuename>
+						<defaulvalue></defaulvalue>
+						<width>25</width>
+						<show>N</show>
+					</header>
+
+				</headers>
+			</tasklist>
+			</tables>
+		</page>
+	</pages>
+
+</sets>
