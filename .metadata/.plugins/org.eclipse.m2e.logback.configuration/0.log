@@ -10442,3 +10442,17 @@ The type java.io.ObjectInputStream cannot be resolved. It is indirectly referenc
 2021-01-28 18:14:41,754 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2021-01-28 18:14:41,760 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-01-28 18:14:41,761 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-28 18:29:06,539 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-28 18:29:06,546 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-28 18:29:06,550 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-28 18:29:06,551 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-28 18:29:19,197 [Worker-46] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-01-28 18:29:19,911 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-28 18:29:19,912 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-28 18:29:19,975 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-28 18:29:19,975 [Worker-39] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-28 18:30:16,419 [Worker-41] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-01-28 18:30:17,018 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-28 18:30:17,018 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-28 18:30:17,075 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-28 18:30:17,076 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
