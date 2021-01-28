@@ -1,0 +1,6 @@
+package xm;
+
+public interface IProxyService {
+	
+    public Object getProxy();
+}

@@ -61,7 +61,7 @@
 	</section>
 	<section name="DialogBounds_SuperInterfaceSelectionDialog">
 		<item value="373" key="DIALOG_WIDTH"/>
-		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|5|0|微软雅黑" key="DIALOG_FONT_NAME"/>
+		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
 		<item value="596" key="DIALOG_HEIGHT"/>
 		<item value="100" key="DIALOG_X_ORIGIN"/>
 		<item value="-60" key="DIALOG_Y_ORIGIN"/>
@@ -92,9 +92,9 @@
 		<item value="677" key="DIALOG_X_ORIGIN"/>
 	</section>
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
-		<item value="726" key="DIALOG_WIDTH"/>
-		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|5|0|微软雅黑" key="DIALOG_FONT_NAME"/>
-		<item value="887" key="DIALOG_HEIGHT"/>
+		<item value="587" key="DIALOG_WIDTH"/>
+		<item value="1|微软雅黑|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|微软雅黑" key="DIALOG_FONT_NAME"/>
+		<item value="766" key="DIALOG_HEIGHT"/>
 		<item value="18" key="DIALOG_Y_ORIGIN"/>
 		<item value="675" key="DIALOG_X_ORIGIN"/>
 	</section>

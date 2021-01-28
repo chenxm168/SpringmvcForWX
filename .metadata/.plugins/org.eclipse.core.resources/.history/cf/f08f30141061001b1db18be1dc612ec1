@@ -1,0 +1,5 @@
+package xm.ftp;
+
+public class FtpSrv {
+
+}

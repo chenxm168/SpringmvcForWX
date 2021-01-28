@@ -14,8 +14,8 @@ import org.springframework.context.ApplicationContextAware;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
+import xm.CONST;
 import xm.httprequest.HttpRequest;
-import xm.wxbase.CONST;
 import xm.wxbase.CloudTokenManager;
 import xm.wxbase.DownLoadFromCloudSrv;
 

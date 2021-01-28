@@ -3,3 +3,8 @@
 1611646346212	Rename field 'DEFAULT_TOCKEN_HTTPS_URL'
 1611646396642	Rename field 'DEFAULT_TOKEN_HTTPS_URL'
 1611653614000	Rename type 'UploadFileSheduler'
+1611817013591	Move compilation unit
+1611820374472	Rename type 'IHostProxyService'
+1611820735940	Delete element
+1611822086218	Delete element
+1611822096525	Delete element

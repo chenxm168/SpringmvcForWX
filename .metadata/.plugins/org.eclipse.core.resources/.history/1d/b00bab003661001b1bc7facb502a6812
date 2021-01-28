@@ -1,0 +1,289 @@
+package xm.ftp;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTPFile;
+import org.apache.commons.net.ftp.FTPReply;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import xm.wxbase.CONST;
+
+public class FtpSrv {
+
+	private Logger log = LogManager.getLogger(FtpSrv.class);
+
+	
+	private String hostIp;
+	private int hostPort = 21;
+	private String userName;
+	private String password;
+	
+	private FTPClient ftp = null;
+
+	public boolean isConnected() {
+		return ftp.isConnected();
+	}
+
+
+
+	public String getHostIp() {
+		return hostIp;
+	}
+
+	public void setHostIp(String hostIp) {
+		this.hostIp = hostIp;
+	}
+
+	public int getHostPort() {
+		return hostPort;
+	}
+
+	public void setHostPort(int hostPort) {
+		this.hostPort = hostPort;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public FtpSrv()
+	{
+		ftp=new FTPClient();
+        
+		this.hostIp=CONST.DEFAULT_FTP_SERVER_IP;
+		this.hostPort=CONST.DEFAULT_FTP_SERVER_PORT;
+		this.userName=CONST.DEFAULT_FTP_USER;
+		this.password=CONST.DEFAULT_FTP_PWD;
+	}
+
+	public boolean Connect() {
+		
+
+		return this.Connect(this.hostIp, this.hostPort, this.userName, this.password);
+	}
+	
+	public boolean Connect(String hostip,int port,String user,String pwd) {
+		boolean rtn=false;
+		try {
+			ftp.connect(hostip, port);
+			
+			ftp.login(user, pwd);
+			
+            ftp.setConnectTimeout(50000);
+            // 设置中文编码集，防止中文乱码
+            ftp.setControlEncoding("UTF-8");
+            if (!FTPReply.isPositiveCompletion(ftp.getReplyCode())) {
+                log.info("未连接到FTP，用户名或密码错误");
+                ftp.disconnect();
+            } else {
+            	log.info("FTP连接成功");
+            	rtn=true;
+            }
+			
+		} catch (Exception e) {
+			log.error(e.getMessage(),e);
+		}
+		
+		return rtn;
+	}
+	
+	public void Disconnect() {
+		try {
+			if(ftp!=null)
+			{
+				ftp.logout();
+				ftp.disconnect();
+			}
+			
+		} catch (Exception e) {
+			log.error(e.getMessage(),e);
+		}
+
+		
+	}
+	
+	public boolean DownLoad(String filePath,String fileName,String downPath,boolean delftpfile) {
+		boolean flag = false;
+		if(!ftp.isConnected())
+		{
+		  if(!	this.Connect())
+		  {
+			  return false;
+		  }
+		}
+		
+		try {
+			
+			 ftp.changeWorkingDirectory(filePath);
+	            // 获取目录下文件集合
+	            ftp.enterLocalPassiveMode();
+	           
+	            FTPFile[] files = ftp.listFiles();
+	            for (FTPFile file : files) {
+	                // 取得指定文件并下载
+	                if (file.getName().equals(fileName)) {
+	                    File downFile = new File(downPath + File.separator
+	                            + file.getName());
+	                    OutputStream out = new FileOutputStream(downFile);
+	                    // 绑定输出流下载文件,需要设置编码集，不然可能出现文件为空的情况
+	                    flag = ftp.retrieveFile(new String(file.getName().getBytes("UTF-8"),"ISO-8859-1"), out);
+	                    // 下载成功删除文件,看项目需求
+	                    if(delftpfile)
+	                    {
+	                    	if(!ftp.deleteFile(new String(fileName.getBytes("UTF-8"),"ISO-8859-1")))
+	                    	{
+	                    		log.error("del ftp file fail! file:"+downFile);
+	                    	}
+	                    }
+	                    
+	                    out.flush();
+	                    out.close();
+	                    if(flag){
+	                        log.info("下载成功");
+	                    }else{
+	                        log.error("下载失败");
+	                    }
+	                }
+	            }
+			
+		} catch (Exception e) {
+			log.error(e.getMessage(),e);
+		}
+		
+		return flag;
+		
+	}
+	
+	public boolean DownLoad(String filePath,String fileName,String downPath) {
+	  return this.DownLoad(filePath, fileName, downPath, false);
+	}
+	
+	public boolean Upload(String filePath,String ftpPath,boolean delLocal) {
+		boolean flag = false;
+		if(!ftp.isConnected())
+		{
+		  if(!	this.Connect())
+		  {
+			  return false;
+		  }
+		}
+		InputStream in = null;
+		try {
+		     // 设置PassiveMode传输  
+            ftp.enterLocalPassiveMode(); 
+            //设置二进制传输，使用BINARY_FILE_TYPE，ASC容易造成文件损坏
+            ftp.setFileType(FTPClient.BINARY_FILE_TYPE);
+            //判断FPT目标文件夹时候存在不存在则创建
+            if(!ftp.changeWorkingDirectory(ftpPath)){
+                ftp.makeDirectory(ftpPath);
+            }
+            //跳转目标目录
+            ftp.changeWorkingDirectory(ftpPath);
+            
+            //上传文件
+            File file = new File(filePath);
+            in = new FileInputStream(file);
+            String tempName = ftpPath+File.separator+file.getName();
+            flag = ftp.storeFile(new String (tempName.getBytes("UTF-8"),"ISO-8859-1"),in);
+            if(flag){
+                log.info("上传成功");
+                if(delLocal)
+                {
+                	try {
+                		
+                	  if(	file.delete())
+                	  {
+                		  log.debug("del file success!file:["+filePath+"]");
+                	  }
+						
+					} catch (Exception e) {
+						log.error("del file fail!file:["+filePath+"]");
+						log.error(e.getMessage(),e);
+					}
+                }
+            }else{
+            	log.error("上传失败");
+            }
+			
+		} catch (Exception e) {
+			log.error(e.getMessage(),e);
+		}
+		
+		return flag;
+		
+	}
+	
+	public boolean Upload(String filePath,String ftpPath)
+	{
+		return this.Upload(filePath, ftpPath,false);
+	}
+	
+	public boolean Copy(String olePath, String newPath,String fileName) {
+		boolean flag =false;
+		try {
+            // 跳转到文件目录
+            ftp.changeWorkingDirectory(olePath);
+            //设置连接模式，不设置会获取为空
+            ftp.enterLocalPassiveMode();
+            // 获取目录下文件集合
+            FTPFile[] files = ftp.listFiles();
+            ByteArrayInputStream  in = null;
+            ByteArrayOutputStream out = null;
+            for (FTPFile file : files) {
+                // 取得指定文件并下载 
+                if (file.getName().equals(fileName)) {
+                    
+                    //读取文件，使用下载文件的方法把文件写入内存,绑定到out流上
+                    out = new ByteArrayOutputStream();
+                    ftp.retrieveFile(new String(file.getName().getBytes("UTF-8"),"ISO-8859-1"), out);
+                    in = new ByteArrayInputStream(out.toByteArray());
+                    //创建新目录
+                    ftp.makeDirectory(newPath);
+                    //文件复制，先读，再写
+                    //二进制
+                    ftp.setFileType(FTPClient.BINARY_FILE_TYPE);
+                    flag = ftp.storeFile(newPath+File.separator+(new String(file.getName().getBytes("UTF-8"),"ISO-8859-1")),in);
+                    out.flush();
+                    out.close();
+                    in.close();
+                    if(flag){
+                        log.info("转存成功");
+                    }else{
+                    	log.error("复制失败");
+                    }
+                    
+                    
+                }
+            }
+        } catch (Exception e) {
+        	log.error("复制失败");
+        } 
+        return flag;
+		
+	}
+	
+
+}

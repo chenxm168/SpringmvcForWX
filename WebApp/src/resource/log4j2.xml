@@ -50,8 +50,8 @@
 			</Policies>
 			<!-- 日志保留策略，配置只保留七天 -->
 			<DefaultRolloverStrategy>
-				<!-- <Delete basePath="${WebApp.root}" maxDepth="2"> -->
-				<Delete basePath="${pattern}" maxDepth="2">
+				<!-- <Delete basePath="${WebApp.root}" maxDepth="1"> -->
+				<Delete basePath="${pattern}" maxDepth="1">
 					<IfFileName glob="applog.log" />
 					<IfLastModified age="7d" />
 				</Delete>
@@ -72,7 +72,7 @@
 			<!-- 日志保留策略，配置只保留七天 -->
 			<DefaultRolloverStrategy>
 				<!-- <Delete basePath="${WebApp.root}" maxDepth="2"> -->
-				<Delete basePath="${pattern}" maxDepth="2">
+				<Delete basePath="${pattern}" maxDepth="1">
 					<IfFileName glob="trace.log" />
 					<IfLastModified age="7d" />
 				</Delete>
@@ -153,6 +153,13 @@
 			 <AppenderRef ref="console" /> 
 
 			<AppenderRef ref="AsyncXmRollingFile" />
+		</Logger>
+		
+	<Logger name="xm" additivity="false" level="TRACE">
+
+			<AppenderRef ref="console" />
+			<AppenderRef ref="AsyncTraceRollingFile" />
+
 		</Logger>
 
 

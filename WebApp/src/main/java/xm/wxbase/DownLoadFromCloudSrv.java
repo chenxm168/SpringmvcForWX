@@ -14,6 +14,7 @@ import org.springframework.context.ApplicationContextAware;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
+import xm.CONST;
 import xm.httprequest.HttpRequest;
 
 public class DownLoadFromCloudSrv implements ApplicationContextAware {

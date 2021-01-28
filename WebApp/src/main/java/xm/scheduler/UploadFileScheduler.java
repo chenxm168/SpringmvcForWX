@@ -11,7 +11,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-import xm.wxbase.CONST;
+import xm.CONST;
 import xm.wxbase.Utils;
 
 public class UploadFileScheduler implements IScheduleJob ,ApplicationContextAware {

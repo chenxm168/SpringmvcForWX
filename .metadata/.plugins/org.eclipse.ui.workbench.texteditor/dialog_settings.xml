@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Json2" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="commons-net"/>
+			<item value="commoms.net"/>
 			<item value="Json2"/>
 			<item value="json"/>
 			<item value="private"/>
 			<item value="Date"/>
 			<item value="commons-io"/>
 			<item value="spring-web"/>
-			<item value="MsgUtils"/>
-			<item value="ClassPathResource"/>
 		</list>
 		<list key="replacehistory">
 			<item value="public"/>

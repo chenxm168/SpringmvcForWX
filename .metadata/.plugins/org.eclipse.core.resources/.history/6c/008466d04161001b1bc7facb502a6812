@@ -1,0 +1,69 @@
+package xm.ftp;
+
+import xm.IClientBehive;
+import xm.IProxyService;
+
+public class FtpProxy implements IProxyService,IClientBehive {
+	private IClientBehive service;
+
+	@Override
+	public  Object getProxy() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean Connect() {
+		
+		return service.Connect();
+	}
+
+	@Override
+	public boolean Download(String filePath, String fileName, String downPath) {
+		
+		if(!service.getIsConnected())
+		{
+			
+		}
+		
+		return false;
+	}
+
+	@Override
+	public boolean Download(String filePath, String fileName, String downPath,
+			boolean delhostfile) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean Upload(String filePath, String ftpPath, boolean delLocal) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean Upload(String filePath, String ftpPath) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void Disconnect() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean Copy(String olePath, String newPath, String fileName) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean getIsConnected() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
