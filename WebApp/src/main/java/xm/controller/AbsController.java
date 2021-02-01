@@ -17,6 +17,7 @@ public class AbsController implements ApplicationContextAware,IJsonDataGetable {
 
 	 protected ApplicationContext contenxt = null;
 	protected Logger logger =LogManager.getLogger (AbsController.class);
+	
 	protected IWXMessageHandler wxmessagehandler;
 	
 
@@ -30,7 +31,7 @@ public class AbsController implements ApplicationContextAware,IJsonDataGetable {
 	public IWXMessageHandler getWxmessagehandler() {
 		return wxmessagehandler;
 	}
-      @Autowired
+     // @Autowired
 	public void setWxmessagehandler(IWXMessageHandler wxmessagehandler) {
 		this.wxmessagehandler = wxmessagehandler;
 	}

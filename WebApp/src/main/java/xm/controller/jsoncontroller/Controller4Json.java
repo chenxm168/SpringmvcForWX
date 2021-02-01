@@ -6,6 +6,8 @@ import java.io.PrintWriter;
 
 
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,10 +21,12 @@ import org.apache.commons.lang3.StringUtils;
 
 import xm.controller.AbsController;
 import xm.message.IWXMessageHandler;
+import xm.message.wx.MsgBaseUtil;
 
 
 @Controller
 @Scope(value="prototype")
+
 // @RequestMapping("json.*")
 public class Controller4Json extends AbsController {
 
@@ -42,7 +46,7 @@ public class Controller4Json extends AbsController {
 	public ModelAndView handleRequestForPost(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		try {
-			
+		
 			logger.info("http client ip:"+request.getRemoteAddr());
 			request.setCharacterEncoding("UTF-8");
 			BufferedReader reader = request.getReader();
@@ -55,7 +59,7 @@ public class Controller4Json extends AbsController {
 			String json = sb.toString();
 			logger.debug("Received WX Message <--");
 			logger.debug(json+"\n");
-			
+			/*
 			if(wxmessagehandler==null)
 			{
 				wxmessagehandler=(IWXMessageHandler) contenxt.getBean("wxmessagehandler");
@@ -63,7 +67,30 @@ public class Controller4Json extends AbsController {
             
 			
 			
-			String reply = wxmessagehandler.Process(json);
+			String reply = wxmessagehandler.Process(json); */
+			
+			Map<String, String[]> map = request.getParameterMap();
+			String service=StringUtils.EMPTY;
+			if(map.containsKey("service"))
+			{
+				String[] strings= map.get("service");
+				service=strings[0];
+			}
+			
+			if(service==StringUtils.EMPTY)
+			{
+				MsgBaseUtil util=new MsgBaseUtil();
+				String xml= util.Json2Xml(json);
+				service= util.getWXMsgServiceName(xml);
+			}
+			if(service==null||service==StringUtils.EMPTY)
+			{
+				
+				
+				return null;
+			}
+			IWXMessageHandler handler =(IWXMessageHandler) contenxt.getBean(service);
+			String reply= handler.Process(json);
 
 			response.setContentType("application/json");
 			// response.setContentEncoding("UTF-8");

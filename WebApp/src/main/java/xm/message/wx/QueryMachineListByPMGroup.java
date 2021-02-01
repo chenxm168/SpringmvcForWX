@@ -6,8 +6,11 @@ import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.Element;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
-
+@Component("querymachinelistbypmsgroup")
+@Scope(value="prototype")
 public class QueryMachineListByPMGroup extends AbsWXMsgSrv {
 
 	@Override
@@ -19,7 +22,7 @@ public class QueryMachineListByPMGroup extends AbsWXMsgSrv {
 		if(util==null)
 		{
 			try {
-				 util=(MsgBaseUtil) context.getBean("msgbaseutil");
+				 util=new MsgBaseUtil();
 				
 			} catch (Exception e) {
 				log.error(e.getMessage(),e);

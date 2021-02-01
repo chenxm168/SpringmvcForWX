@@ -6,9 +6,13 @@ import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.Element;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import xm.message.MsgUtils;
 
+@Component("asdplantaskbaseinfosrv")
+@Scope(value="prototype")
 public class AsdPalnTaskBaseInfoSrv extends AbsWXMsgSrv {
 
 	@Override
@@ -18,7 +22,7 @@ public class AsdPalnTaskBaseInfoSrv extends AbsWXMsgSrv {
 		if(util==null)
 		{
 			try {
-				 util=(MsgBaseUtil) context.getBean("msgbaseutil");
+				 util=new MsgBaseUtil();
 				
 			} catch (Exception e) {
 				log.error(e.getMessage(),e);

@@ -8,10 +8,14 @@ import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
+import org.springframework.context.annotation.Scope;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
 
 import xm.message.MsgUtils;
 
+@Component("asduserloginsrv")
+@Scope(value="prototype")
 public class AsdUserLoginSrv extends AbsWXMsgSrv {
 	
 	
@@ -25,7 +29,7 @@ public class AsdUserLoginSrv extends AbsWXMsgSrv {
 		if(util==null)
 		{
 			try {
-				 util=(MsgBaseUtil) context.getBean("msgbaseutil");
+				 util=new MsgBaseUtil();
 				
 			} catch (Exception e) {
 				log.error(e.getMessage(),e);

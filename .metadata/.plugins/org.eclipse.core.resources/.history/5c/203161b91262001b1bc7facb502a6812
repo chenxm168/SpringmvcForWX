@@ -1,0 +1,274 @@
+package xm.Tib;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import xm.Tib.Tib.QDispatch;
+
+import javax.security.auth.DestroyFailedException;
+import javax.security.auth.Destroyable;
+
+import com.tibco.tibrv.Tibrv;
+import com.tibco.tibrv.TibrvErrorCallback;
+import com.tibco.tibrv.TibrvException;
+import com.tibco.tibrv.TibrvListener;
+import com.tibco.tibrv.TibrvMsg;
+import com.tibco.tibrv.TibrvMsgCallback;
+import com.tibco.tibrv.TibrvRvdTransport;
+import com.tibco.tibrv.TibrvTransport;
+
+public class TibServer implements TibrvErrorCallback, TibrvMsgCallback,
+		Destroyable {
+	
+	public Logger log = LogManager.getLogger(Tib.class);
+
+	@Override
+	public void onError(Object arg0, int arg1, String arg2, Throwable arg3) {
+
+		log.error(arg0);
+	}
+
+	// @Getter
+	private boolean isOpen;
+	@Autowired
+	private ITibMsgListen msgListen;
+	private Thread listenThread;
+
+	private List<TibrvTransport> transports = new ArrayList<TibrvTransport>();
+	private Map<String, TibrvListener> linstenMaps = new HashMap<String, TibrvListener>();
+
+	private Map<String, Map<String, String>> listenMap = new HashMap<String, Map<String, String>>();
+
+	public TibServer() {
+
+		this.isOpen = this.Open();
+
+	}
+
+	public TibServer(ITibMsgListen msgListener) {
+		this.msgListen = msgListener;
+		this.isOpen = this.Open();
+	}
+
+	private boolean Open() {
+
+		try {
+			listenMap = TibUtils.getListenMap();
+			if(!Tibrv.isValid())
+			{
+				Tibrv.open(Tibrv.IMPL_NATIVE);
+			}
+			
+			if (Tibrv.isValid()) {
+				log.debug("Is Native?" + Tibrv.isNativeImpl());
+				log.debug("default queue:" + Tibrv.defaultQueue());
+				log.debug("TibprocessTransport:" + Tibrv.processTransport());
+				log.debug("listenMap Size:"+listenMap.size());
+
+				// Map<String, Map<String, String>> listenMap=
+				// TibUtils.getListenMap();
+				if (listenMap.size() > 0) {
+					for (String key : listenMap.keySet()) {
+						String listenSerivceString = listenMap.get(key).get(
+								"service");
+						String listenNetworkString = listenMap.get(key).get(
+								"network");
+						String listenDaemonString = listenMap.get(key).get(
+								"daemon");
+						String listenSujectString = listenMap.get(key).get(
+								"listenSubject");
+
+						TibrvTransport transport = new TibrvRvdTransport(
+								listenSerivceString, listenNetworkString,
+								listenDaemonString);
+                        log.info(String.format("Creat Listen transport! transport:%s", transport.toString()));
+						transports.add(transport);
+						TibrvListener listener = new TibrvListener(
+								Tibrv.defaultQueue(), this, transport,
+								listenSujectString, null);
+						this.linstenMaps.put(key, listener);
+						StringBuilder sbBuilder = new StringBuilder();
+						sbBuilder.append("env=" + key + ";");
+						sbBuilder
+								.append("service=" + listenSerivceString + ";");
+						sbBuilder
+								.append("network=" + listenNetworkString + ";");
+						sbBuilder.append("daemon=" + listenDaemonString + ";");
+						sbBuilder.append("listenSubject=" + listenSujectString
+								+ ";\n");
+						sbBuilder.append("TibrvListener Start Successs!");
+						log.info(sbBuilder.toString());
+
+					}
+				}
+
+				this.listenThread = new Thread(new QDispatch());
+				this.listenThread.setDaemon(true);
+				this.listenThread.start();
+
+				isOpen = true;
+			}
+
+		} catch (Exception e) {
+			log.error(e.getMessage());
+		}
+
+		return false;
+
+	}
+
+	private boolean close() {
+
+		try {
+			for (int i = 0; i < transports.size(); i++) {
+
+				if (transports.get(i) != null) {
+					transports.get(i).destroy();
+				}
+
+			}
+
+			this.isOpen = false;
+
+			if (this.listenThread != null
+					&& this.listenThread.isAlive() == true) {
+				this.listenThread.interrupt();
+				this.listenThread = null;
+
+				log.debug("Success to close listener thread.");
+			}
+			/*
+			 * 
+			 * if (this.listener != null) { this.listener.destroy();
+			 * this.listener = null;
+			 * 
+			 * log.debug("Success to destroy listener thread."); }
+			 * 
+			 * if (this.transport != null) { this.transport.destroy();
+			 * this.transport = null;
+			 * 
+			 * log.debug("Success to destroy transport."); }
+			 */
+
+			for (String key : this.linstenMaps.keySet()) {
+				try {
+					this.linstenMaps.get(key).destroy();
+
+				} catch (Exception e) {
+					log.error(e.getMessage(), e);
+				}
+
+				for (TibrvTransport tibrvTransport : transports) {
+					try {
+						tibrvTransport.destroy();
+
+					} catch (Exception e) {
+						log.error(e.getMessage(), e);
+					}
+				}
+
+			}
+
+			Tibrv.close();
+
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
+			return false;
+		}
+
+		return true;
+
+	}
+
+	
+
+	
+
+
+
+	
+
+	
+
+	class QDispatch implements Runnable {
+		// private Logger Log= LogManager.getLogger(QDispatch.class);
+		@Override
+		public void run() {
+			while (true) {
+				try {
+					Tibrv.defaultQueue().dispatch();
+				} catch (InterruptedException ie) {
+					log.error(ie.getMessage());
+					break;
+				} catch (TibrvException e) {
+					log.error(e.getMessage(), e);
+				}
+
+				try {
+					Thread.sleep(1);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+					break;
+				}
+			}
+
+		}
+
+	}
+
+	@Override
+	public void onMsg(TibrvListener paramTibrvListener, TibrvMsg paramTibrvMsg) {
+		try {
+
+			if (paramTibrvListener != null) {
+
+				if (this.msgListen != null) {
+					this.msgListen.onMessage(paramTibrvListener, paramTibrvMsg);
+				}
+			}
+
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
+		}
+
+	}
+
+	@Override
+	public void destroy() throws DestroyFailedException {
+		try {
+			this.close();
+			// Destroyable.super.destroy();
+
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
+		}
+
+	}
+
+	@Override
+	public boolean isDestroyed() {
+
+		// return Destroyable.super.isDestroyed();
+		return !this.isOpen;
+	}
+
+	public ITibMsgListen getMsgListen() {
+		return msgListen;
+	}
+
+	public void setMsgListen(ITibMsgListen msgListen) {
+		this.msgListen = msgListen;
+	}
+
+	
+
+
+
+}

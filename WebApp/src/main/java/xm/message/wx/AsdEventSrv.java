@@ -1,8 +1,12 @@
 package xm.message.wx;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
-
+//service no use
+//@Component("asdeventsrv")
+//@Scope(value="prototype")
 public class AsdEventSrv extends AbsWXMsgSrv {
 
 	@Override
@@ -13,7 +17,7 @@ public class AsdEventSrv extends AbsWXMsgSrv {
 		if(util==null)
 		{
 			try {
-				 util=(MsgBaseUtil) context.getBean("msgbaseutil");
+				 util=new MsgBaseUtil();
 				
 			} catch (Exception e) {
 				log.error(e.getMessage(),e);

@@ -20,10 +20,9 @@ import org.dom4j.io.SAXReader;
 public class TibUtils {
 
 	private static Logger logger = LogManager.getLogger(TibUtils.class);
-	@SuppressWarnings("rawtypes")
-	private static ConcurrentHashMap map = new ConcurrentHashMap();
+	
+	private static ConcurrentHashMap<String,String> map = new ConcurrentHashMap<String,String>();
 
-	@SuppressWarnings("unchecked")
 	public static String getDaemon(String envString, String module) {
 		String keyString = envString + module + "daemon0";
 
@@ -72,7 +71,7 @@ public class TibUtils {
 
 	}
 
-	@SuppressWarnings("unchecked")
+	
 	public static String getDaemon(String envString, String module, int seq) {
 		if (seq == 0) {
 			return getDaemon(envString, module);
@@ -142,32 +141,133 @@ public class TibUtils {
 	
 
 	public static String getNetwork(String envString, String module) {
-		return getElementText(envString, module, "network");
+		String key= envString+module+"network";
+		
+		String networkString=StringUtils.EMPTY;
+		if(map.containsKey(key))
+		{
+			return (String) map.get(key);
+		}
+		
+		networkString=getElementText(envString, module, "network");
+		try {
+			map.put(key, networkString);
+		} catch (Exception e) {
+			logger.error(e.getMessage(),e);
+		}
+		
+		return networkString;
+		//return getElementText(envString, module, "network");
 
 	}
 
 	public static String getService(String envString, String module) {
-		return getElementText(envString, module, "service");
+		String key= envString+module+"service";
+		
+		String service=StringUtils.EMPTY;
+		if(map.containsKey(key))
+		{
+			return (String) map.get(key);
+		}
+		
+		service=getElementText(envString, module, "service");
+		try {
+			map.put(key, service);
+		} catch (Exception e) {
+			logger.error(e.getMessage(),e);
+		}
+		
+		return service;
+	
 
 	}
 
 	public static String getSourceSubject(String envString, String module) {
-		return getElementText(envString, module, "sourceSubject");
+		String key= envString+module+"sourceSubject";
+		
+		String sourceSubject=StringUtils.EMPTY;
+		if(map.containsKey(key))
+		{
+			return (String) map.get(key);
+		}
+		
+		sourceSubject=getElementText(envString, module, "sourceSubject");
+		try {
+			map.put(key, sourceSubject);
+		} catch (Exception e) {
+			logger.error(e.getMessage(),e);
+		}
+		
+		return sourceSubject;
+	
 
 	}
 
 	public static String getTargetSubject(String envString, String module) {
-		return getElementText(envString, module, "targetSubject");
+		String key= envString+module+"targetSubject";
+		
+		String targetSubject=StringUtils.EMPTY;
+		if(map.containsKey(key))
+		{
+			return (String) map.get(key);
+		}
+		
+		targetSubject=getElementText(envString, module, "targetSubject");
+		try {
+			map.put(key, targetSubject);
+		} catch (Exception e) {
+			logger.error(e.getMessage(),e);
+		}
+		
+		return targetSubject;
+		
+		
+		
 
 	}
 
 	public static String getFieldName(String envString, String module) {
-		return getElementText(envString, module, "fieldName");
+		
+		String key= envString+module+"fieldName";
+		
+		String fieldName=StringUtils.EMPTY;
+		if(map.containsKey(key))
+		{
+			return (String) map.get(key);
+		}
+		
+		fieldName=getElementText(envString, module, "fieldName");
+		try {
+			map.put(key, fieldName);
+		} catch (Exception e) {
+			logger.error(e.getMessage(),e);
+		}
+		
+		return fieldName;
+		
+		
+	
 
 	}
 
 	public static String getTimeout(String envString, String module) {
-		return getElementText(envString, module, "timeout");
+	String key= envString+module+"timeout";
+		
+		String timeout=StringUtils.EMPTY;
+		if(map.containsKey(key))
+		{
+			return (String) map.get(key);
+		}
+		
+		timeout=getElementText(envString, module, "timeout");
+		try {
+			map.put(key, timeout);
+		} catch (Exception e) {
+			logger.error(e.getMessage(),e);
+		}
+		
+		return timeout;
+	
 
 	}
 

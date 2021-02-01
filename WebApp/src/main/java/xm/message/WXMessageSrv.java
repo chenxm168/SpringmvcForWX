@@ -5,17 +5,26 @@ import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import xm.Tib.ITibInterface;
 import xm.message.wx.MsgBaseUtil;
-
+@Component("wxmessagehandler")
+@Scope(value="prototype")
 public class WXMessageSrv implements IWXMessageHandler ,ApplicationContextAware {
 	
 	   private ApplicationContext contex;
 	   private Map<String, IWXMessageHandler> handlerMap=new HashMap<String, IWXMessageHandler>();
+	   @Autowired
 	   protected MsgBaseUtil util=null;
+
+	public MsgBaseUtil getUtil() {
+		return util;
+	}
 
 	public Map<String, IWXMessageHandler> getHandlerMap() {
 		return handlerMap;
@@ -31,7 +40,7 @@ public class WXMessageSrv implements IWXMessageHandler ,ApplicationContextAware 
 		//String xml = MsgUtils.Json2Xml(jsonMessage);
 		//String service = MsgUtils.getWXMsgServiceName(xml);
 		try {
-			MsgBaseUtil util =(MsgBaseUtil) contex.getBean("msgbaseutil");
+			//MsgBaseUtil util =(MsgBaseUtil) contex.getBean("msgbaseutil");
 			String xml = util.Json2Xml(jsonMessage);
 			String service = util.getWXMsgServiceName(xml);
 			

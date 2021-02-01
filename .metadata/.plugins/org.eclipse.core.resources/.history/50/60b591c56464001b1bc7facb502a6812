@@ -1,0 +1,98 @@
+package xm.message.wx;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.lang3.StringUtils;
+import org.dom4j.Document;
+import org.dom4j.Element;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component("querymachinelistbypmsgroup")
+@Scope(value="prototype")
+public class QueryMachineListByPMGroup extends AbsWXMsgSrv {
+
+	@Override
+	public String Process(String jsonMessage) {
+		
+		log.info("Received WX Message <--");
+		log.info(jsonMessage+"\n");
+		
+		if(util==null)
+		{
+			try {
+				 util=(MsgBaseUtil) context.getBean("msgbaseutil");
+				
+			} catch (Exception e) {
+				log.error(e.getMessage(),e);
+			}
+		}
+		if(util==null)
+		{
+			log.error("get message unit faill ");
+			return StringUtils.EMPTY;
+		}
+
+		
+		String jxml=util.Json2Xml(jsonMessage);
+		String env=util.getWXEnv(jxml);
+		Map<String, String> map = util.getWXParamMap(jxml);
+		Document rtndoc=util.MakeBaseReturnMessageDoc();
+		Element rtnroot = rtndoc.getRootElement();
+		String qString = util.MakeQueryMessage("GetMachineListInfoPMS", map);
+		String mesr1= tib.QueryRequest(env, qString);
+		if(mesr1==StringUtils.EMPTY)
+		{
+			return StringUtils.EMPTY;
+		}
+		try {
+			Element body=(Element) rtnroot.selectSingleNode("//Body | //body | BODY");
+			
+			Element machinelist= util.getElement(mesr1, "DATALIST");
+			if(machinelist!=null)
+			{
+				machinelist=(Element)machinelist.clone();
+				body.add(machinelist);
+				//log.info(body.asXML());
+				List<Element> list=machinelist.elements();
+				//log.info(machinelist.asXML());
+				for (Element subEl : list) {
+				//	 log.info(subEl.asXML());
+					Element el3= subEl.addElement("UNITLIST");
+					Element subEl2 =(Element) subEl.selectSingleNode(".//MACHINENAME | .//machinename | .//Machinename");
+				//	log.info(subEl2.asXML());
+					if(subEl2==null)
+					{
+						continue;
+					}
+					String eqname= subEl2.getText();
+					map.clear();
+					map.put("SUPERMACHINENAME", eqname);
+					qString =util.MakeQueryMessage("GetMachineUnitListInfoPMS", map);
+					String mesr2= tib.QueryRequest(env, qString);
+					if(mesr2!=StringUtils.EMPTY)
+					{
+						Element unitlistElement= util.getElement(mesr2, "DATALIST");
+						if(unitlistElement!=null)
+						{
+							el3.add((Element)unitlistElement.clone());
+						}
+								
+					}
+										
+				}//end for
+				
+				//log.info(rtndoc.asXML());
+				
+				return util.Xml2Json(rtndoc.asXML());
+				
+			}			
+			
+		} catch (Exception e) {
+			log.error(e.getMessage(),e);
+		}
+		return null;
+	}
+
+}

@@ -9,6 +9,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import xm.Tib.Tib.QDispatch;
 
@@ -24,6 +26,7 @@ import com.tibco.tibrv.TibrvMsgCallback;
 import com.tibco.tibrv.TibrvRvdTransport;
 import com.tibco.tibrv.TibrvTransport;
 
+@Service("tibService")
 public class TibServer implements TibrvErrorCallback, TibrvMsgCallback,
 		Destroyable {
 	
@@ -45,13 +48,14 @@ public class TibServer implements TibrvErrorCallback, TibrvMsgCallback,
 	private Map<String, TibrvListener> linstenMaps = new HashMap<String, TibrvListener>();
 
 	private Map<String, Map<String, String>> listenMap = new HashMap<String, Map<String, String>>();
-
+    /*
 	public TibServer() {
 
 		this.isOpen = this.Open();
 
 	}
-
+    */
+	@Autowired
 	public TibServer(ITibMsgListen msgListener) {
 		this.msgListen = msgListener;
 		this.isOpen = this.Open();
@@ -88,7 +92,7 @@ public class TibServer implements TibrvErrorCallback, TibrvMsgCallback,
 						TibrvTransport transport = new TibrvRvdTransport(
 								listenSerivceString, listenNetworkString,
 								listenDaemonString);
-
+                        log.info(String.format("Creat Listen transport! transport:%s", transport.toString()));
 						transports.add(transport);
 						TibrvListener listener = new TibrvListener(
 								Tibrv.defaultQueue(), this, transport,

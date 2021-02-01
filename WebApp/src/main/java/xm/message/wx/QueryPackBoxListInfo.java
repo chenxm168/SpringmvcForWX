@@ -4,8 +4,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
-
+@Component("querypackboxlistinfo")
+@Scope(value="prototype")
 public class QueryPackBoxListInfo extends AbsWXMsgSrv {
 
 	@Override
@@ -17,7 +20,7 @@ public class QueryPackBoxListInfo extends AbsWXMsgSrv {
 		if(util==null)
 		{
 			try {
-				 util=(MsgBaseUtil) context.getBean("msgbaseutil");
+				 util=new MsgBaseUtil();
 				
 			} catch (Exception e) {
 				log.error(e.getMessage(),e);

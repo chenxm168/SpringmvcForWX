@@ -1,0 +1,7 @@
+package xm.controller.jsoncontroller;
+
+import xm.controller.AbsController;
+
+public class Controller4WX extends AbsController {
+
+}

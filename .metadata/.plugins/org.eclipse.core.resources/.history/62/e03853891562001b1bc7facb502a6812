@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+    http://www.springframework.org/schema/beans/spring-beans.xsd  
+    http://www.springframework.org/schema/context   
+    http://www.springframework.org/schema/context/spring-context.xsd  
+    http://www.springframework.org/schema/mvc  
+    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<!-- no use disable <import resource="mongodb-context.xml"/> <import resource="db-context.xml"/> -->
+
+	<!-- <import resource="quartz-config.xml"/> -->
+
+
+
+	<!-- <bean id="privilegeGroupService" class ="xm.wx.mongodb.service.PrivilegeGroupServiceImpl"/> -->
+     <!--
+	<bean id="msgService" class="xm.message.MsgService" />
+	<bean id="tibserver" class="xm.Tib.TibServer">
+	 	<constructor-arg name="msgListener" ref="msgService" /> 
+	</bean>-->
+	<bean id="tib" class="xm.Tib.TibClient" scope="prototype">
+	</bean>
+
+	<bean id="wxmessagehandler" class="xm.message.WXMessageSrv" scope="prototype" />
+	<bean id="asdquerysrv" class="xm.message.wx.AsdQuerySrv" scope="prototype" />
+	<bean id="asduserloginsrv" class="xm.message.wx.AsdUserLoginSrv"
+		scope="prototype">
+		<property name="tib" ref="tib" />
+	</bean>
+	<bean id="asdoicsrv" class="xm.message.wx.AsdOicSrv" scope="prototype">
+		<property name="tib" ref="tib" />
+	</bean>
+	<bean id="asdpmssrv" class="xm.message.wx.AsdPmsSrv" scope="prototype">
+		<property name="tib" ref="tib" />
+	</bean>
+	<bean id="asdverifyprivilege" class="xm.message.wx.AsdVerifyPrivilege"
+		scope="prototype">
+		<property name="tib" ref="tib" />
+	</bean>
+	<bean id="asdplantaskbaseinfosrv" class="xm.message.wx.AsdPalnTaskBaseInfoSrv"
+		scope="prototype">
+		<property name="tib" ref="tib" />
+	</bean>
+
+	<bean id="querymachinelistbypmsgroup" class="xm.message.wx.QueryMachineListByPMGroup"
+		scope="prototype">
+		<property name="tib" ref="tib" />
+	</bean>
+	<!-- <bean id="queryppboxlistinfo" class="xm.message.wx.QueryPPBOXListInfo" 
+		> <property name="tib" ref="tib" /> </bean> -->
+
+	<bean id="querypackboxlistinfo" class="xm.message.wx.QueryPackBoxListInfo"
+		scope="prototype">
+		<property name="tib" ref="tib" />
+	</bean>
+
+	<bean id="querybalanceinfo" class="xm.message.wx.QueryBalanceInfo"
+		scope="prototype">
+		<property name="tib" ref="tib" />
+	</bean>
+
+	<bean id="querywaitstbinfo" class="xm.message.wx.QueryWaitSTBInfo"
+		scope="prototype">
+		<property name="tib" ref="tib" />
+	</bean>
+
+	<bean id="queryplantasklist" class="xm.message.wx.QueryPlanTaskList"
+		scope="prototype">
+		<property name="tib" ref="tib" />
+	</bean>
+
+	<bean id="asdcommonquerysrv" class="xm.message.wx.AsdCommonQuerySrv"
+		scope="prototype">
+		<property name="tib" ref="tib" />
+	</bean>
+
+	<bean id="msgbaseutil" class="xm.message.wx.MsgBaseUtil" scope="prototype">
+	</bean>
+
+	<bean id="asdfileuploadsrv" class="xm.message.wx.AsdFileUploadSrv"
+		scope="prototype">
+	</bean>
+
+
+
+</beans>

@@ -15,8 +15,13 @@ import org.dom4j.Element;
 import org.dom4j.ElementHandler;
 import org.dom4j.Node;
 import org.dom4j.io.SAXReader;
+import org.springframework.context.annotation.Scope;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
 
+
+@Component("queryplantasklist")
+@Scope(value="prototype")
 public class QueryPlanTaskList extends AbsWXMsgSrv {
 
 	@Override
@@ -31,7 +36,7 @@ public class QueryPlanTaskList extends AbsWXMsgSrv {
 		if(util==null)
 		{
 			try {
-				 util=(MsgBaseUtil) context.getBean("msgbaseutil");
+				 util=new MsgBaseUtil();
 				
 			} catch (Exception e) {
 				log.error(e.getMessage(),e);

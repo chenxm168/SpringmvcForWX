@@ -1,0 +1,389 @@
+package xm.Tib;
+
+
+
+import javax.security.auth.DestroyFailedException;
+import javax.security.auth.Destroyable;
+
+import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import com.tibco.tibrv.Tibrv;
+import com.tibco.tibrv.TibrvErrorCallback;
+import com.tibco.tibrv.TibrvMsg;
+import com.tibco.tibrv.TibrvRvdTransport;
+import com.tibco.tibrv.TibrvTransport;
+
+public class TibClient implements TibrvErrorCallback, ITibInterface,
+ Destroyable
+{
+	public Logger log = LogManager.getLogger(Tib.class);
+    
+	//private TibrvRvdTransport transport=null;
+	//Map<String,TibrvTransport> tspMap=new HashMap<String, TibrvTransport>();
+	
+	@Override
+	public void onError(Object arg0, int arg1, String arg2, Throwable arg3) {
+
+		log.error(arg0);
+	}
+
+	// @Getter
+	private boolean isOpen;
+	public TibClient() {
+
+		this.isOpen = this.Open();
+
+	}
+
+
+	private boolean Open() {
+
+		try {
+			//listenMap = TibUtils.getListenMap();
+			if(!Tibrv.isValid())
+			{
+				Tibrv.open(Tibrv.IMPL_NATIVE);
+				log.debug("Tibrv NATIVE?"+Tibrv.isValid());
+				if(Tibrv.isValid())
+				{
+					return true;
+				}
+			}else {
+				return true;
+			}
+			
+
+		} catch (Exception e) {
+			log.error(e.getMessage());
+		}
+
+		return false;
+
+	}
+
+	private boolean close() {
+
+
+
+		return true;
+
+	}
+
+	@Override
+	public String QueryRequest(String envString, Object content) {
+		if(!this.Open())
+		{
+			return StringUtils.EMPTY;
+		}
+		String targetSubject = TibUtils.getTargetSubject(envString, "qry");
+		String fieldName = TibUtils.getFieldName(envString, "qry");
+		String timeoutString = TibUtils.getTimeout(envString, "qry");
+
+		int timeout = 30;
+		if (timeoutString != null && timeoutString != StringUtils.EMPTY) {
+			try {
+
+				timeout = Integer.valueOf(timeoutString);
+
+			} catch (Exception e) {
+				log.error(e.getMessage());
+			}
+		}
+
+		TibrvTransport transport = null;
+
+		try {
+
+		//	transport = new TibrvRvdTransport(service, network, daemon);
+			transport = this.getTransport(envString, "qry");
+			if(transport==null)
+			{
+				log.error("Send Query Faill! Can't get Transport");
+				return StringUtils.EMPTY;
+			}
+			TibrvMsg tibrvMsg = new TibrvMsg();
+			tibrvMsg.setSendSubject(targetSubject);
+			tibrvMsg.add(fieldName, content);
+			TibrvMsg rsMsg = transport.sendRequest(tibrvMsg, timeout);
+			StringBuilder sbBuilder = new StringBuilder();
+			sbBuilder.append("Send Query Message -->\n");
+			sbBuilder.append("env=" + envString + ";");
+		//	sbBuilder.append("service=" + service + ";");
+		//	sbBuilder.append("network=" + network + ";");
+		//	sbBuilder.append("daemon=" + daemon + ";");
+			sbBuilder.append("targetSuject=" + targetSubject + ";\n");
+			sbBuilder.append(content);
+			log.info(sbBuilder.toString());
+
+			if (rsMsg == null) {
+
+				transport.destroy();
+				return StringUtils.EMPTY;
+
+			} else {
+				transport.destroy();
+				String rpyString = (String) rsMsg.getField(fieldName).data;
+
+				StringBuilder sb = new StringBuilder();
+				sb.append("Recieved Query Reply Message <-- \n");
+				sb.append(rpyString);
+				log.info(sb.toString());
+				//log.info(rpyString);
+
+				return rpyString;
+			}
+
+		} catch (Exception e) {
+			log.error(e.getMessage(),e);
+			if (transport != null) {
+				transport.destroy();
+			}
+			return StringUtils.EMPTY;
+		}
+
+	}
+
+	@Override
+	public String SendMesRequest(String envString, Object content) {
+		return SendMesRequest(envString, "oic", content);
+		
+
+	}
+
+	@Override
+	public String SendMesRequest(String envString, String module, Object content) {
+		
+		if(!this.Open())
+		{
+			return StringUtils.EMPTY;
+		}
+		
+		//String network = TibUtils.getNetwork(envString, module);
+		//String service = TibUtils.getService(envString, module);
+		//String daemon = TibUtils.getDaemon(envString, module);
+		String targetSubject = TibUtils.getTargetSubject(envString, module);
+		String fieldName = TibUtils.getFieldName(envString, module);
+		String timeoutString = TibUtils.getTimeout(envString, module);
+		//String sourceSubject = TibUtils.getSourceSubject(envString, module);
+
+		int timeout = 30;
+		if (timeoutString != null && timeoutString != StringUtils.EMPTY) {
+			try {
+
+				timeout = Integer.valueOf(timeoutString);
+
+			} catch (Exception e) {
+				log.error(e.getMessage(),e);
+			}
+		}
+
+		TibrvTransport transport = null;
+
+		try {
+
+		//	transport = new TibrvRvdTransport(service, network, daemon);
+			transport = this.getTransport(envString, module);
+			if(transport==null)
+			{
+				log.error(String.format("Send MESRequest Faill! [env:%s;module:%s]", envString,module));
+				return StringUtils.EMPTY;
+			}
+			TibrvMsg tibrvMsg = new TibrvMsg();
+			tibrvMsg.setSendSubject(targetSubject);			
+			tibrvMsg.add(fieldName, content);
+			StringBuilder sbBuilder = new StringBuilder();
+			sbBuilder.append("Send Query Message -->\n");
+			sbBuilder.append("env=" + envString + ";");
+			//sbBuilder.append("service=" + service + ";");
+			//sbBuilder.append("network=" + network + ";");
+			//sbBuilder.append("daemon=" + daemon + ";");
+			sbBuilder.append("targetSuject=" + targetSubject + ";\n");
+			sbBuilder.append(content);
+			log.info(sbBuilder.toString());
+			
+			TibrvMsg rsMsg = transport.sendRequest(tibrvMsg, timeout);
+			
+			String inbox2= tibrvMsg.getReplySubject();
+            log.info("INBOX2:"+inbox2);
+           // log.info("INBOX:"+inbox);
+           
+			if (rsMsg == null) {
+				transport.destroy();
+				return StringUtils.EMPTY;
+
+			} else {
+				transport.destroy();
+				String rpyString = (String) rsMsg.getField(fieldName).data;
+
+				StringBuilder sb = new StringBuilder();
+				sb.append("Recieved  Reply Message <-- \n");
+				sb.append(rpyString);
+				log.info(sb.toString());
+				//log.info(rpyString);
+
+				return rpyString;
+
+			}
+
+		} catch (Exception e) {
+			log.error(e.getMessage(),e);
+			if (transport != null) {
+				transport.destroy();
+			}
+			return StringUtils.EMPTY;
+		}
+
+	}
+
+	@Override
+	public boolean SendMesNoNeedReply(String envString, Object content) {
+
+		return SendMesNoNeedReply(envString, "oic", content);
+
+	}
+
+	@Override
+	public boolean SendMesNoNeedReply(String envString, String module,
+			Object content) {
+
+		String targetSubject = TibUtils.getTargetSubject(envString, module);
+
+		return SendMesNoNeedReply(envString, content, targetSubject);
+
+	}
+
+
+
+
+
+	@Override
+	public void destroy() throws DestroyFailedException {
+		try {
+			this.close();
+			// Destroyable.super.destroy();
+
+		} catch (Exception e) {
+			log.error(e.getMessage(), e);
+		}
+
+	}
+
+	@Override
+	public boolean isDestroyed() {
+
+		// return Destroyable.super.isDestroyed();
+		return !this.isOpen;
+	}
+
+
+
+	@Override
+	public boolean SendMesNoNeedReply(String envString,String module, Object content,
+			String targetSubject) {
+		if(!this.Open())
+		{
+			return false;
+		}
+	//	String network = TibUtils.getNetwork(envString, module);
+	//	String service = TibUtils.getService(envString, module);
+	//	String daemon = TibUtils.getDaemon(envString, module);
+		// String targetSubject = targetSuject;
+		String fieldName = TibUtils.getFieldName(envString, module);
+		String sourceSubject = TibUtils.getSourceSubject(envString,module);
+
+		TibrvTransport transport = null;
+
+		try {
+
+			//transport = new TibrvRvdTransport(service, network, daemon);
+			transport = this.getTransport(envString, module);
+			if(transport==null)
+			{
+				log.error(String.format("Send SendMesNoNeedReply Fail! [env:%s;module:%s]", envString,module));
+				return false;
+			}
+			TibrvMsg tibrvMsg = new TibrvMsg();
+			tibrvMsg.setSendSubject(targetSubject);
+			tibrvMsg.setReplySubject(sourceSubject);
+			tibrvMsg.add(fieldName, content);
+			transport.send(tibrvMsg);
+			StringBuilder sb = new StringBuilder();
+			sb.append("TibcoSend Message Success!\n");
+			//sb.append("service=" + service + ";");
+			//.append("network=" + network + ";");
+		//	sb.append("daemon=" + daemon + ";");
+			sb.append("targetSubject=" + targetSubject + ";\n");
+			sb.append(content);
+			log.info(sb.toString());
+
+			transport.destroy();
+			return true;
+
+		} catch (Exception e) {
+			log.error(e.getMessage());
+			if (transport != null) {
+				transport.destroy();
+			}
+			return false;
+		}
+	}
+
+	@Override
+	public boolean SendMesNoNeedReply(String envString, Object content,
+			String targetSuject) {
+		
+		return SendMesNoNeedReply(envString,"oic",content,targetSuject);
+	}
+	
+	private TibrvTransport getTransport(String envString,String module) {
+
+        TibrvTransport transport=null;
+        int seq=0;
+        
+			transport=	this.getTransport(envString, module, seq);
+			
+			if(transport==null)
+			{
+				int cnt=TibUtils.getDaemonCount(envString, module);
+				for(int i=seq+1;i<cnt;i++)
+				{
+					transport= this.getTransport(envString, module, i);
+					if(transport!=null)
+					{
+						return transport;
+					}
+				}
+				
+			}else {
+				
+				return transport;
+			}
+			
+	
+		
+		return null;
+	}
+	
+	private TibrvTransport  getTransport(String envString,String module,int seq) {
+		String network = TibUtils.getNetwork(envString, module);
+		String service = TibUtils.getService(envString, module);
+		String daemon = TibUtils.getDaemon(envString, module,seq);
+
+		try {
+			
+			TibrvTransport transport = new TibrvRvdTransport(service, network, daemon);
+			log.debug(transport.toString());
+			return 		 transport;
+			
+		} catch (Exception e) {
+			
+           log.error("Can't get Transport! daemon:["+daemon+"]");
+           log.error(e.getMessage(),e);
+		}
+		
+		return null;
+	}
+
+  
+}

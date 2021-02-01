@@ -1,0 +1,1 @@
+cmd.exe /X /C ""C:\Program Files\Java\jdk1.8.0_131\bin\javac" @D:/develop/WebProj/webWorkspace/WebApp/target/classes/org.codehaus.plexus.compiler.javac.JavacCompiler2645339633025331781arguments"

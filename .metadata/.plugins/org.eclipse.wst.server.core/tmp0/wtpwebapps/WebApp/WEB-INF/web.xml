@@ -99,6 +99,8 @@
 	 <!--  	<url-pattern>/wx/*</url-pattern> -->
 	 <url-pattern>*.do</url-pattern> 
 	 <url-pattern>/trulyasdwx</url-pattern> 
+	 <url-pattern>/asdwxservice</url-pattern> 
+	 
 	</servlet-mapping>
 
 

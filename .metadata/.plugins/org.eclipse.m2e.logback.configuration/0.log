@@ -10456,3 +10456,705 @@ The type java.io.ObjectInputStream cannot be resolved. It is indirectly referenc
 2021-01-28 18:30:17,018 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
 2021-01-28 18:30:17,075 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-01-28 18:30:17,076 [Worker-35] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 09:08:23,138 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 09:08:23,188 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-29 09:08:23,206 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 09:08:23,206 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:30:16,874 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:30:16,875 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 10:30:16,879 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:30:16,879 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:30:38,241 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:30:38,241 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-29 10:30:38,246 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:30:38,246 [Worker-91] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:39:24,000 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:39:24,001 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 10:39:24,004 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:39:24,005 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:40:17,053 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:40:17,055 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 10:40:17,057 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:40:17,057 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:47:49,304 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:47:49,308 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 10:47:49,316 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:47:49,317 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:54:26,134 [Worker-91] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-01-29 10:54:29,195 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:54:29,196 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 10:54:29,356 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:54:29,356 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:54:45,717 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:54:45,717 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-29 10:54:45,718 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:54:45,719 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:54:46,827 [Worker-80] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 10:54:46,827 [Worker-80] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml clean
+2021-01-29 10:54:52,167 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:54:52,168 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 10:54:52,190 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:54:52,190 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:54:53,329 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:54:53,329 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-29 10:54:53,330 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:54:53,331 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:54:56,804 [Worker-105] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 10:54:56,804 [Worker-105] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml install
+2021-01-29 10:55:08,756 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:55:08,759 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 10:55:08,763 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:55:08,763 [Worker-89] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:56:00,875 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:56:00,877 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 10:56:00,882 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:56:00,883 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:56:20,359 [Worker-103] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 10:56:20,359 [Worker-103] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml clean
+2021-01-29 10:56:22,352 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:56:22,353 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 10:56:22,373 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:56:22,373 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:56:23,500 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:56:23,500 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-29 10:56:23,521 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:56:23,522 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:56:30,653 [Worker-104] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 10:56:30,653 [Worker-104] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml install
+2021-01-29 10:56:44,836 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:56:44,837 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 10:56:44,840 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:56:44,841 [Worker-76] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:58:01,727 [Worker-91] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-01-29 10:58:02,468 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:58:02,469 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 10:58:02,491 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:58:02,495 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:58:25,565 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:58:25,566 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 10:58:25,569 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:58:25,570 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:58:32,226 [Worker-104] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-01-29 10:58:32,668 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:58:32,670 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 10:58:32,747 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:58:32,747 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:59:22,857 [Worker-105] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 10:59:22,857 [Worker-105] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml clean
+2021-01-29 10:59:26,504 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:59:26,504 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 10:59:26,530 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:59:26,530 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:59:27,599 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:59:27,599 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-29 10:59:27,600 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:59:27,600 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 10:59:32,221 [Worker-96] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 10:59:32,221 [Worker-96] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml install
+2021-01-29 10:59:42,116 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:59:42,117 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 10:59:42,120 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 10:59:42,120 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 11:52:19,743 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 11:52:19,744 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-29 11:52:19,745 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 11:52:19,745 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 12:04:16,882 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 12:04:16,884 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 12:04:16,887 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 12:04:16,888 [Worker-100] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 14:24:32,118 [Worker-124] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 14:24:32,122 [Worker-124] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 14:24:32,125 [Worker-124] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 14:24:32,125 [Worker-124] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 14:53:45,937 [Worker-130] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 14:53:45,939 [Worker-130] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 14:53:45,943 [Worker-130] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 14:53:45,943 [Worker-130] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 15:29:59,521 [Worker-141] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 15:29:59,523 [Worker-141] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 15:29:59,526 [Worker-141] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 15:29:59,526 [Worker-141] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 15:31:21,987 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 15:31:21,988 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 15:31:21,991 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 15:31:21,991 [Worker-142] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 15:40:39,337 [Worker-143] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-01-29 15:40:42,991 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 15:40:42,992 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 15:40:43,689 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 15:40:43,689 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 15:41:16,888 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 15:41:16,888 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-29 15:41:16,889 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 15:41:16,889 [Worker-143] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 15:41:54,806 [Worker-147] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 15:41:54,807 [Worker-147] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml clean
+2021-01-29 15:41:59,530 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 15:41:59,531 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 15:41:59,565 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 15:41:59,565 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 15:42:00,652 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 15:42:00,653 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-29 15:42:00,654 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 15:42:00,654 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 15:42:04,710 [Worker-145] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 15:42:04,711 [Worker-145] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml install
+2021-01-29 15:42:26,072 [Worker-147] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 15:42:26,073 [Worker-147] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 15:42:26,076 [Worker-147] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 15:42:26,076 [Worker-147] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 15:52:25,226 [Worker-130] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 15:52:25,227 [Worker-130] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 15:52:25,229 [Worker-130] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 15:52:25,230 [Worker-130] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:07:21,989 [Worker-131] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-01-29 16:07:24,384 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:07:24,385 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 16:07:24,455 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:07:24,456 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:07:30,822 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:07:30,823 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-29 16:07:30,825 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:07:30,825 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:07:33,306 [Worker-148] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 16:07:33,306 [Worker-148] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml clean
+2021-01-29 16:07:35,635 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:07:35,637 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 16:07:35,693 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:07:35,693 [Worker-144] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:07:36,824 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:07:36,825 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-29 16:07:36,825 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:07:36,826 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:07:42,106 [Worker-157] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 16:07:42,107 [Worker-157] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml install
+2021-01-29 16:07:52,752 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:07:52,753 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 16:07:52,756 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:07:52,757 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:17:57,021 [Worker-157] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:17:57,025 [Worker-157] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 16:17:57,028 [Worker-157] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:17:57,029 [Worker-157] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:19:42,568 [Worker-153] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-01-29 16:19:43,339 [Worker-150] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:19:43,340 [Worker-150] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 16:19:43,409 [Worker-150] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:19:43,409 [Worker-150] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:20:47,424 [Worker-148] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 16:20:47,425 [Worker-148] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml clean
+2021-01-29 16:20:50,177 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:20:50,180 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 16:20:50,198 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:20:50,198 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:20:51,393 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:20:51,393 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-29 16:20:51,394 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:20:51,394 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:20:57,944 [Worker-157] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 16:20:57,944 [Worker-157] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml install
+2021-01-29 16:21:08,005 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:21:08,007 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 16:21:08,010 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:21:08,010 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:33:10,871 [Worker-158] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:33:10,874 [Worker-158] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 16:33:10,900 [Worker-158] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:33:10,900 [Worker-158] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:37:58,716 [Worker-160] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-01-29 16:37:59,307 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:37:59,308 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 16:37:59,334 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:37:59,334 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:38:30,161 [Worker-159] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 16:38:30,161 [Worker-159] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml clean
+2021-01-29 16:38:32,900 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:38:32,902 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 16:38:32,961 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:38:32,961 [Worker-148] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:38:34,052 [Worker-163] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:38:34,052 [Worker-163] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-29 16:38:34,053 [Worker-163] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:38:34,053 [Worker-163] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:38:38,050 [Worker-131] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 16:38:38,050 [Worker-131] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml install
+2021-01-29 16:38:49,134 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:38:49,135 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 16:38:49,137 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:38:49,137 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:55:19,294 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:55:19,295 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-29 16:55:19,298 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:55:19,298 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:56:20,679 [Worker-131] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-01-29 16:56:21,322 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:56:21,323 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 16:56:21,350 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:56:21,350 [Worker-161] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:56:36,759 [Worker-163] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 16:56:36,760 [Worker-163] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml clean
+2021-01-29 16:56:39,073 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:56:39,075 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 16:56:39,093 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:56:39,094 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:56:40,229 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:56:40,230 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-29 16:56:40,231 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:56:40,231 [Worker-165] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 16:56:45,549 [Worker-165] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 16:56:45,549 [Worker-165] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml install
+2021-01-29 16:56:57,222 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:56:57,224 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 16:56:57,227 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 16:56:57,251 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:11:11,469 [Worker-168] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:11:11,469 [Worker-168] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-29 17:11:11,473 [Worker-168] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:11:11,473 [Worker-168] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:11:24,173 [Worker-153] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-01-29 17:11:25,804 [Worker-171] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:11:25,805 [Worker-171] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 17:11:25,828 [Worker-171] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:11:25,828 [Worker-171] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:11:40,162 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:11:40,163 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-29 17:11:40,164 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:11:40,165 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:13:59,596 [Worker-168] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:13:59,596 [Worker-168] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-29 17:13:59,600 [Worker-168] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:13:59,601 [Worker-168] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:16:44,003 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:16:44,015 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-29 17:16:44,017 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:16:44,018 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:16:52,918 [Worker-164] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:16:52,919 [Worker-164] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 17:16:52,921 [Worker-164] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:16:52,921 [Worker-164] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:18:20,508 [Worker-173] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-01-29 17:18:21,018 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:18:21,018 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 17:18:21,039 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:18:21,040 [Worker-170] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:18:56,330 [Worker-153] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 17:18:56,330 [Worker-153] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml clean
+2021-01-29 17:18:59,459 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:18:59,461 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 17:18:59,575 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:18:59,575 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:19:00,661 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:19:00,661 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-29 17:19:00,662 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:19:00,662 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:19:07,171 [Worker-171] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 17:19:07,171 [Worker-171] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml install
+2021-01-29 17:19:20,036 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:19:20,037 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 17:19:20,040 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:19:20,040 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:35:42,415 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:35:42,416 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-29 17:35:42,419 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:35:42,419 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:37:00,497 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:37:00,498 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-29 17:37:00,501 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:37:00,501 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:37:20,065 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:37:20,066 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-29 17:37:20,076 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:37:20,076 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:38:01,924 [Worker-181] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:38:01,924 [Worker-181] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-29 17:38:01,929 [Worker-181] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:38:01,929 [Worker-181] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:40:14,998 [Worker-175] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-01-29 17:40:18,416 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:40:18,417 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 17:40:18,532 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:40:18,533 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:40:36,804 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:40:36,804 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-29 17:40:36,805 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:40:36,806 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:40:46,021 [Worker-172] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 17:40:46,021 [Worker-172] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml clean
+2021-01-29 17:40:49,456 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:40:49,458 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 17:40:49,473 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:40:49,473 [Worker-175] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:40:50,588 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:40:50,588 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-01-29 17:40:50,595 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:40:50,595 [Worker-131] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:40:59,939 [Worker-181] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-01-29 17:40:59,939 [Worker-181] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml install
+2021-01-29 17:41:15,641 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:41:15,642 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 17:41:15,645 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:41:15,645 [Worker-174] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:44:18,436 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:44:18,439 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 17:44:18,442 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:44:18,442 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 17:44:32,651 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:44:32,654 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-01-29 17:44:32,663 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 17:44:32,663 [Worker-153] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 18:01:37,887 [Worker-183] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 18:01:37,888 [Worker-183] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-29 18:01:37,892 [Worker-183] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 18:01:37,892 [Worker-183] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-01-29 18:01:59,819 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 18:01:59,819 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-01-29 18:01:59,823 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-01-29 18:01:59,823 [Worker-179] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 10:18:03,195 [Worker-290] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 10:18:03,272 [Worker-290] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-02-01 10:18:03,508 [Worker-290] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 10:18:03,636 [Worker-290] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 10:18:17,059 [Worker-294] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 10:18:17,060 [Worker-294] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 10:18:17,063 [Worker-294] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 10:18:17,063 [Worker-294] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 10:21:57,363 [Worker-292] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 10:21:57,364 [Worker-292] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-02-01 10:21:57,381 [Worker-292] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 10:21:57,381 [Worker-292] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 10:22:50,347 [Worker-291] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 10:22:50,348 [Worker-291] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-02-01 10:22:50,372 [Worker-291] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 10:22:50,372 [Worker-291] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 10:36:01,318 [Worker-292] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 10:36:01,319 [Worker-292] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 10:36:01,321 [Worker-292] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 10:36:01,321 [Worker-292] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 10:58:12,864 [Worker-301] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 10:58:12,865 [Worker-301] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 10:58:12,868 [Worker-301] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 10:58:12,868 [Worker-301] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 10:59:44,848 [Worker-313] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 10:59:44,848 [Worker-313] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-02-01 10:59:44,852 [Worker-313] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 10:59:44,852 [Worker-313] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 10:59:54,147 [Worker-294] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 10:59:54,148 [Worker-294] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 10:59:54,152 [Worker-294] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 10:59:54,152 [Worker-294] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 11:05:52,825 [Worker-292] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:05:52,826 [Worker-292] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 11:05:52,828 [Worker-292] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:05:52,828 [Worker-292] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 11:10:13,153 [Worker-321] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:10:13,154 [Worker-321] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 11:10:13,158 [Worker-321] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:10:13,158 [Worker-321] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 11:10:25,477 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:10:25,478 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 11:10:25,480 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:10:25,480 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 11:12:06,723 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:12:06,724 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 11:12:06,726 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:12:06,726 [Worker-317] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 11:12:58,188 [Worker-329] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-02-01 11:13:00,900 [Worker-301] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:13:00,900 [Worker-301] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 11:13:01,028 [Worker-301] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:13:01,029 [Worker-301] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 11:15:52,459 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:15:52,460 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-02-01 11:15:52,461 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:15:52,461 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 11:17:59,197 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:17:59,198 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 11:17:59,200 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:17:59,200 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 11:21:16,845 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:21:16,846 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-02-01 11:21:16,848 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:21:16,848 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 11:21:26,330 [Worker-338] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:21:26,330 [Worker-338] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-02-01 11:21:26,331 [Worker-338] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:21:26,331 [Worker-338] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 11:23:20,013 [Worker-341] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-02-01 11:23:20,901 [Worker-339] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:23:21,283 [Worker-339] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 11:23:21,316 [Worker-339] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:23:21,316 [Worker-339] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 11:27:29,711 [Worker-329] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:27:29,712 [Worker-329] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 11:27:29,715 [Worker-329] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:27:29,715 [Worker-329] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 11:27:34,130 [Worker-346] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-02-01 11:27:34,646 [Worker-343] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:27:34,646 [Worker-343] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 11:27:34,665 [Worker-343] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:27:34,665 [Worker-343] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 11:51:31,370 [Worker-351] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:51:31,371 [Worker-351] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 11:51:31,373 [Worker-351] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:51:31,374 [Worker-351] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 11:52:29,703 [Worker-352] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:52:29,704 [Worker-352] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-02-01 11:52:29,706 [Worker-352] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:52:29,706 [Worker-352] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 11:52:38,419 [Worker-352] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:52:38,419 [Worker-352] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 11:52:38,423 [Worker-352] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:52:38,423 [Worker-352] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 11:56:10,611 [Worker-356] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:56:10,612 [Worker-356] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 11:56:10,614 [Worker-356] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:56:10,614 [Worker-356] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 11:58:25,159 [Worker-360] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:58:25,160 [Worker-360] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 11:58:25,162 [Worker-360] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 11:58:25,162 [Worker-360] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 13:58:52,925 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 13:58:52,926 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 13:58:52,928 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 13:58:52,929 [Worker-309] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 13:58:54,860 [Worker-371] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 13:58:54,861 [Worker-371] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 13:58:54,863 [Worker-371] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 13:58:54,863 [Worker-371] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 13:58:55,976 [Worker-372] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 13:58:55,977 [Worker-372] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 13:58:55,980 [Worker-372] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 13:58:55,980 [Worker-372] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 13:58:57,075 [Worker-368] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 13:58:57,076 [Worker-368] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 13:58:57,086 [Worker-368] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 13:58:57,086 [Worker-368] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 13:58:58,207 [Worker-369] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 13:58:58,208 [Worker-369] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 13:58:58,210 [Worker-369] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 13:58:58,210 [Worker-369] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 13:59:50,159 [Worker-372] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 13:59:50,160 [Worker-372] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 13:59:50,162 [Worker-372] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 13:59:50,163 [Worker-372] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:00:52,028 [Worker-377] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:00:52,029 [Worker-377] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:00:52,031 [Worker-377] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:00:52,031 [Worker-377] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:01:05,997 [Worker-369] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:01:05,998 [Worker-369] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:01:06,001 [Worker-369] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:01:06,002 [Worker-369] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:01:32,790 [Worker-372] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:01:32,791 [Worker-372] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:01:32,793 [Worker-372] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:01:32,793 [Worker-372] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:01:55,434 [Worker-364] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:01:55,435 [Worker-364] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:01:55,438 [Worker-364] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:01:55,439 [Worker-364] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:02:24,596 [Worker-374] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:02:24,597 [Worker-374] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:02:24,600 [Worker-374] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:02:24,600 [Worker-374] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:03:01,550 [Worker-372] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:03:01,552 [Worker-372] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:03:01,555 [Worker-372] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:03:01,555 [Worker-372] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:03:17,383 [Worker-376] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:03:17,384 [Worker-376] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:03:17,387 [Worker-376] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:03:17,387 [Worker-376] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:03:59,600 [Worker-375] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:03:59,601 [Worker-375] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:03:59,603 [Worker-375] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:03:59,603 [Worker-375] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:04:46,075 [Worker-367] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:04:46,077 [Worker-367] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:04:46,079 [Worker-367] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:04:46,079 [Worker-367] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:07:20,711 [Worker-368] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:07:20,711 [Worker-368] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-02-01 14:07:20,716 [Worker-368] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:07:20,716 [Worker-368] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:12:44,956 [Worker-369] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:12:44,957 [Worker-369] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:12:44,960 [Worker-369] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:12:44,960 [Worker-369] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:15:47,609 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:15:47,610 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:15:47,612 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:15:47,613 [Worker-389] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:20:53,446 [Worker-387] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:20:53,447 [Worker-387] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:20:53,449 [Worker-387] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:20:53,450 [Worker-387] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:27:30,477 [Worker-385] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:27:30,478 [Worker-385] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:27:30,480 [Worker-385] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:27:30,481 [Worker-385] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:30:58,415 [Worker-412] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:30:58,416 [Worker-412] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:30:58,418 [Worker-412] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:30:58,419 [Worker-412] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:36:27,037 [Worker-400] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:36:27,038 [Worker-400] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:36:27,041 [Worker-400] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:36:27,041 [Worker-400] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:37:26,751 [Worker-404] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:37:26,753 [Worker-404] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:37:26,755 [Worker-404] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:37:26,755 [Worker-404] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:37:35,176 [Worker-412] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:37:35,177 [Worker-412] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:37:35,179 [Worker-412] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:37:35,180 [Worker-412] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:55:34,507 [Worker-414] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:55:34,510 [Worker-414] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:55:34,522 [Worker-414] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:55:34,523 [Worker-414] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:56:08,949 [Worker-414] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:56:08,949 [Worker-414] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-02-01 14:56:08,964 [Worker-414] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:56:08,964 [Worker-414] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 14:56:15,167 [Worker-408] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:56:15,169 [Worker-408] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 14:56:15,171 [Worker-408] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 14:56:15,171 [Worker-408] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 15:00:18,689 [Worker-419] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:00:18,690 [Worker-419] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 15:00:18,692 [Worker-419] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:00:18,692 [Worker-419] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 15:28:26,376 [Worker-418] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-02-01 15:28:29,016 [Worker-425] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:28:29,017 [Worker-425] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 15:28:29,122 [Worker-425] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:28:29,122 [Worker-425] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 15:28:40,328 [Worker-428] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:28:40,328 [Worker-428] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-02-01 15:28:40,330 [Worker-428] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:28:40,330 [Worker-428] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 15:29:48,107 [Worker-414] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:29:48,108 [Worker-414] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 15:29:48,121 [Worker-414] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:29:48,121 [Worker-414] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 15:29:59,629 [Worker-428] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-02-01 15:29:59,630 [Worker-428] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml clean
+2021-02-01 15:30:04,103 [Worker-424] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:30:04,104 [Worker-424] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 15:30:04,123 [Worker-424] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:30:04,123 [Worker-424] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 15:30:05,251 [Worker-428] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:30:05,251 [Worker-428] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-02-01 15:30:05,252 [Worker-428] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:30:05,252 [Worker-428] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 15:30:10,627 [Worker-414] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-02-01 15:30:10,627 [Worker-414] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml install
+2021-02-01 15:30:29,216 [Worker-424] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:30:29,217 [Worker-424] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 15:30:29,218 [Worker-424] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:30:29,219 [Worker-424] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 15:51:56,053 [Worker-429] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:51:56,054 [Worker-429] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 15:51:56,064 [Worker-429] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:51:56,064 [Worker-429] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 15:55:46,116 [Worker-432] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-02-01 15:55:46,812 [Worker-404] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:55:46,812 [Worker-404] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 15:55:46,859 [Worker-404] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:55:46,860 [Worker-404] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 15:56:06,036 [Worker-418] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-02-01 15:56:06,036 [Worker-418] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml clean
+2021-02-01 15:56:08,633 [Worker-406] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:56:08,634 [Worker-406] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 15:56:08,673 [Worker-406] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:56:08,674 [Worker-406] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 15:56:09,798 [Worker-406] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:56:09,798 [Worker-406] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-02-01 15:56:09,799 [Worker-406] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:56:09,799 [Worker-406] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 15:56:16,807 [Worker-432] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-02-01 15:56:16,807 [Worker-432] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml install
+2021-02-01 15:56:31,171 [Worker-432] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:56:31,172 [Worker-432] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 15:56:31,174 [Worker-432] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 15:56:31,174 [Worker-432] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 16:09:14,211 [Worker-438] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:09:14,214 [Worker-438] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 16:09:14,217 [Worker-438] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:09:14,217 [Worker-438] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 16:09:16,710 [Worker-436] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:09:16,714 [Worker-436] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 16:09:16,717 [Worker-436] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:09:16,718 [Worker-436] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 16:09:18,988 [Worker-424] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:09:18,991 [Worker-424] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 16:09:18,996 [Worker-424] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:09:18,996 [Worker-424] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 16:14:04,301 [Worker-435] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-02-01 16:14:05,356 [Worker-435] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:14:05,357 [Worker-435] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 16:14:05,382 [Worker-435] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:14:05,382 [Worker-435] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 16:14:20,583 [Worker-439] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:14:20,585 [Worker-439] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 16:14:20,587 [Worker-439] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:14:20,587 [Worker-439] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 16:14:28,067 [Worker-437] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-02-01 16:14:28,626 [Worker-435] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:14:28,626 [Worker-435] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 16:14:28,649 [Worker-435] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:14:28,649 [Worker-435] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 16:14:50,178 [Worker-404] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-02-01 16:14:50,179 [Worker-404] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml clean
+2021-02-01 16:14:52,612 [Worker-439] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:14:52,615 [Worker-439] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 16:14:52,646 [Worker-439] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:14:52,646 [Worker-439] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 16:14:53,769 [Worker-435] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:14:53,769 [Worker-435] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-02-01 16:14:53,773 [Worker-435] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:14:53,773 [Worker-435] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 16:15:02,927 [Worker-439] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-02-01 16:15:02,927 [Worker-439] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml install
+2021-02-01 16:15:14,225 [Worker-418] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:15:14,227 [Worker-418] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 16:15:14,229 [Worker-418] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 16:15:14,229 [Worker-418] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 17:15:08,882 [Worker-463] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-02-01 17:15:09,497 [Worker-459] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 17:15:09,497 [Worker-459] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 17:15:09,515 [Worker-459] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 17:15:09,515 [Worker-459] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 17:15:21,047 [Worker-459] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-02-01 17:15:21,047 [Worker-459] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml clean
+2021-02-01 17:15:23,443 [Worker-462] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 17:15:23,444 [Worker-462] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 17:15:23,482 [Worker-462] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 17:15:23,482 [Worker-462] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 17:15:24,641 [Worker-465] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 17:15:24,642 [Worker-465] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-02-01 17:15:24,643 [Worker-465] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 17:15:24,643 [Worker-465] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 17:15:28,631 [Worker-462] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-02-01 17:15:28,631 [Worker-462] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml install
+2021-02-01 17:15:39,136 [Worker-465] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 17:15:39,137 [Worker-465] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 17:15:39,140 [Worker-465] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 17:15:39,140 [Worker-465] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 18:03:59,815 [Worker-463] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for WebApp
+2021-02-01 18:04:00,568 [Worker-459] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 18:04:00,569 [Worker-459] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 18:04:00,601 [Worker-459] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 18:04:00,601 [Worker-459] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 18:05:19,120 [Worker-460] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\develop\WebProj\webWorkspace\WebApp
+2021-02-01 18:05:19,120 [Worker-460] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B -X -e -s D:\develop\WebProj\eclipse\setting.xml clean
+2021-02-01 18:05:21,846 [Worker-463] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 18:05:21,848 [Worker-463] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 11 resources
+2021-02-01 18:05:21,870 [Worker-463] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 18:05:21,871 [Worker-463] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources
+2021-02-01 18:05:22,991 [Worker-460] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 18:05:22,992 [Worker-460] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2021-02-01 18:05:22,992 [Worker-460] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-02-01 18:05:22,993 [Worker-460] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\develop\WebProj\webWorkspace\WebApp\src\test\resources

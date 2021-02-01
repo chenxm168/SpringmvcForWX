@@ -7,8 +7,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
-
+@Component("asdcommonquerysrv")
+@Scope(value="prototype")
 public class AsdCommonQuerySrv extends AbsWXMsgSrv {
 
 	@Override
@@ -17,7 +20,7 @@ public class AsdCommonQuerySrv extends AbsWXMsgSrv {
 		log.info(jsonMessage + "\n");
 		if (util == null) {
 			try {
-				util = (MsgBaseUtil) context.getBean("msgbaseutil");
+				util = new MsgBaseUtil();
 
 			} catch (Exception e) {
 				log.error(e.getMessage(), e);

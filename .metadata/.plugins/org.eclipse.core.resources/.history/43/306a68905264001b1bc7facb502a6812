@@ -1,0 +1,93 @@
+package xm.message.wx;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.commons.lang3.StringUtils;
+import org.dom4j.Document;
+import org.dom4j.DocumentHelper;
+import org.dom4j.Element;
+
+
+public class QueryPPBOXListInfo extends AbsWXMsgSrv {
+
+	@Override
+	public String Process(String jsonMessage) {
+		log.info("Received WX Message <--");
+		log.info(jsonMessage+"\n");
+		if(util==null)
+		{
+			try {
+				 util=(MsgBaseUtil) context.getBean("msgbaseutil");
+				
+			} catch (Exception e) {
+				log.error(e.getMessage(),e);
+			}
+		}
+		if(util==null)
+		{
+			log.error("get message unit faill ");
+			return StringUtils.EMPTY;
+		}
+
+		String jxml=util.Json2Xml(jsonMessage);
+		String env= util.getWXEnv(jxml);
+		String userid=util.getWXUserId(jxml);
+		List<String> boxList= util.getParamList(jxml);
+		
+		Map<String, String> map = util.getWXParamMap(jxml);
+		Document rtndoc= util.MakeBaseReturnMessageDoc();
+		Element rtnroot=rtndoc.getRootElement();
+		Element body=(Element) rtnroot.selectSingleNode("//Body | //body | BODY");
+		Element datalist= body.addElement("DATALIST");
+		String factory = "CELL";
+		if(map.containsKey("FACTORYNAME"))
+		{
+			factory= map.get("FACTORYNAME");
+		}
+		for (String label : boxList) {
+			String qString=StringUtils.EMPTY;
+			if(map.containsKey("PACKINGLABELID"))
+			{
+				map.remove("PACKINGLABELID");
+			}
+			map.put("PACKINGLABELID",label);
+			switch (factory) {
+			case "CELL":
+				
+				qString= util.MakeQueryMessage("GetPPBoxListCELL", map);
+				
+				break;
+
+			default:
+				qString= util.MakeQueryMessage("GetPPBoxListFGI", map);
+				break;
+			}
+			
+			if(qString!=StringUtils.EMPTY)
+			{
+				String rString=tib.QueryRequest(env, qString);
+				if(rString!=StringUtils.EMPTY)
+				{
+					try {
+						Document doc2= DocumentHelper.parseText(rString);
+						Element root2= doc2.getRootElement();
+						Element subElement=(Element) root2.selectSingleNode("//DATA | //Data | //data");
+						if(subElement!=null)
+						{
+							datalist.add((Element) subElement.clone());
+						}
+						
+					} catch (Exception e) {
+						log.error(e.getMessage(),e);
+					}
+					
+				}
+			}
+			
+		}
+		
+		return util.Xml2Json(rtndoc.asXML());
+	}
+
+}

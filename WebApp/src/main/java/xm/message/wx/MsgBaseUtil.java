@@ -16,8 +16,9 @@ import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.Node;
 import org.dom4j.io.SAXReader;
-
+import org.springframework.context.annotation.Scope;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
 
@@ -28,6 +29,8 @@ import xm.message.MsgUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
+@Component("util")
+@Scope(value="prototype")
 public class MsgBaseUtil {
 	private Logger log = LogManager.getLogger(MsgBaseUtil.class);
 	private String cfgFilePath = "D:\\WebApp\\config\\";

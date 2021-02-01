@@ -14,11 +14,15 @@ public abstract class AbsWXMsgSrv  implements ApplicationContextAware,IWXMessage
 	protected Logger log = LogManager.getLogger(this.getClass());
 	protected ApplicationContext context ;
 	protected ITibInterface tib;
+	//@Autowired
 	protected MsgBaseUtil util;
+	public MsgBaseUtil getUtil() {
+		return util;
+	}
 	public ITibInterface getTib() {
 		return tib;
 	}
-	//@Autowired
+	@Autowired
 	public void setTib(ITibInterface tib) {
 		this.tib = tib;
 	}

@@ -1,0 +1,116 @@
+package xm.controller.jsoncontroller;
+
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+
+
+
+
+
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import xm.controller.AbsController;
+import xm.message.IWXMessageHandler;
+import xm.message.wx.MsgBaseUtil;
+
+@Controller
+@Scope(value="prototype")
+public class Controller4WX extends AbsController {
+	
+	@Autowired
+	private MsgBaseUtil util;
+	
+	
+	public MsgBaseUtil getUtil() {
+		return util;
+	}
+
+
+	public void setUtil(MsgBaseUtil util) {
+		this.util = util;
+	}
+	
+	@RequestMapping(value = "asdwxservice", method = RequestMethod.GET)
+	public ModelAndView handleRequestForGet(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+
+		PrintWriter out = response.getWriter();
+		out.print("/json/GetRequest");
+		out.flush();
+		return null;
+	}
+
+	@RequestMapping(value = "asdwxservice", method = RequestMethod.POST)
+	public ModelAndView handleRequestForPost(HttpServletRequest request,
+			HttpServletResponse response) throws Exception {
+		try {
+			logger.info("http client ip:"+request.getRemoteAddr());
+			request.setCharacterEncoding("UTF-8");
+			BufferedReader reader = request.getReader();
+			String line = StringUtils.EMPTY;
+			StringBuilder sb = new StringBuilder();
+			while ((line = reader.readLine()) != null) {
+				sb.append(line);
+			}
+
+			String json = sb.toString();
+			logger.debug("Received WX Message <--");
+			logger.debug(json+"\n");
+			
+			Map<String, String[]> map = request.getParameterMap();
+			String service=StringUtils.EMPTY;
+			if(map.containsKey("service"))
+			{
+				String[] strings= map.get("service");
+				service=strings[0];
+			}
+			String xml= util.Json2Xml(json);
+			if(service==StringUtils.EMPTY)
+			{
+				service= util.getWXMsgServiceName(xml);
+			}
+			if(service==null||service==StringUtils.EMPTY)
+			{
+				
+				
+				return null;
+			}
+			IWXMessageHandler handler =(IWXMessageHandler) contenxt.getBean(service);
+			String reply= handler.Process(json);
+			if(reply==StringUtils.EMPTY)
+			{
+				return null;
+			}
+			response.setContentType("application/json");
+			// response.setContentEncoding("UTF-8");
+			response.setCharacterEncoding("UTF-8");
+
+			PrintWriter out = response.getWriter();
+			out.print(reply);
+			out.flush();
+			out.close();
+			logger.info("Send WX Message -->");
+			logger.info(reply+"\n");
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+
+	
+		return null;
+	}
+
+}

@@ -18,6 +18,11 @@
 		<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"></bean> -->
 	<mvc:annotation-driven />
 	<context:component-scan base-package="xm.controller.*"></context:component-scan>
+	<!-- 20210201 add -->
+	<context:component-scan base-package="xm.Tib"></context:component-scan>
+	<context:component-scan base-package="xm.message"></context:component-scan>
+	<context:component-scan base-package="xm.message.*"></context:component-scan>
+	<!-- 20210201 add -->
 	<!--  no use disable
     <context:component-scan base-package="xm.wx.mongodb.*"></context:component-scan>
     <context:component-scan base-package="xm.firebird.*"></context:component-scan>

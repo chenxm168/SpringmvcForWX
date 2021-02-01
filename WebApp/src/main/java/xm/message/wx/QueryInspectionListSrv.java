@@ -3,8 +3,12 @@ package xm.message.wx;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
-
+//service no use
+//@Component("querybalanceinfo")
+//@Scope(value="prototype")
 public class QueryInspectionListSrv extends AbsWXMsgSrv {
 
 	@Override
@@ -16,7 +20,7 @@ public class QueryInspectionListSrv extends AbsWXMsgSrv {
 		if(util==null)
 		{
 			try {
-				 util=(MsgBaseUtil) context.getBean("msgbaseutil");
+				 util=new MsgBaseUtil();
 				
 			} catch (Exception e) {
 				log.error(e.getMessage(),e);
